@@ -1,0 +1,21 @@
+== 0 == REAL=True dealer_platform_id=2
+  清理: REAL=True 旧activity=2 旧calc_batch=1 (仅羿柏)
+== 1. RAW == sig=OOXML sheet=优惠券数据 行=102 header=['券名', '领取客户', '已领取数量', '优惠券面值', '已使用张数', '关联单据编号']
+== 2. calc_batch == id=11
+== 3. coupon_ledger == 载入=102 已用且带单号=48 客户未匹配=1 ['洋洋百货']
+== 4. activity == 返券=17 满赠=18 雪碧scope行=16
+== 5. 返券 == entitlement=45 一致=45 计入费用=675.0 单号未命中=3 ['SXD260905000016,SXD260906000194', 'SXD260829000233,SXD260904000078', 'SXD260902000012,SXD260906000017']
+== 6. 满赠 == 已完成单=2398 合格单=142 entitlement=142 应赠单(单客≤1)=135 一致=99 差异=43 实赠抱枕合计=100.0
+== 7. release == 候选=179 非候选=8
+== 8. result_fee == 返券金额口径 + 满赠数量口径(tpm=NULL)
+== 9. quality_issue 已记
+
+== 10. FK == 无输出(通过)
+  coupon_ledger              = 103
+  activity                   = 4
+  order_activity             = 421
+  result_entitlement         = 421
+  result_release_candidate   = 421
+  result_fee                 = 4
+  result_quality_issue       = 16
+  result_calc_batch          = 4

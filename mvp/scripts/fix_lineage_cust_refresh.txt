@@ -1,0 +1,26 @@
+== BEFORE ==
+raw_import_batch 数 = 3
+raw_file 数 = 11
+batch1 客户行(旧, 保留作历史):
+    (4, 1, 'User2026091410413051852.xlsx', '客户', 'OOXML', 2273)
+
+== 1. 新增批次 == inserted = 1  batch_code = KM-XLQ-CUST-REFRESH-20260922  imported_at = 2026-09-22 17:30:00
+batch_id = 4
+
+== 2. 实读新快照 == sig= OOXML sheet= 客户列表 数据行= 2292
+raw_file 登记 inserted = 1  data_rows = 2292
+
+== AFTER ==
+raw_import_batch 数 = 4 (应 4)
+raw_file 数 = 12 (应 12)
+全部批次:
+    (1, 'KM-XLQ-MJ-20260831-20260917', '小凡', '2026-09-22 10:03:24')
+    (2, 'KM-XLQ-MZ-20260819-20260831', '满赠接入', '2026-09-22 10:28:34')
+    (3, 'KM-XLQ-YHQ-20260909-20260912', '优惠券接入', '2026-09-22 15:51:28')
+    (4, 'KM-XLQ-CUST-REFRESH-20260922', '小凡', '2026-09-22 17:30:00')
+客户模块血缘行(旧+新):
+    (4, 1, 'User2026091410413051852.xlsx', 'OOXML', 2273)
+    (12, 4, 'User-202609221722.xlsx', 'OOXML', 2292)
+customer 总数(应不变 2292) = 2292
+customer_id 校验和(应不变 2627781) = 2627781
+FK violations(应空) = []

@@ -1,0 +1,35 @@
+{
+  "platform": "快马",
+  "dealer": "顺英",
+  "source_root": "../../../第二阶段验证/快马-顺英",
+  "activities": {
+    "满减": {
+      "name": "可口满减",
+      "type": "满减",
+      "start_at": "2026-09-14 20:13:00",
+      "end_at": "2026-09-18 20:13:00",
+      "required_order_status": "已完成",
+      "threshold": 300,
+      "benefit": 15,
+      "scope": "指定品牌：可口",
+      "order_file": "满减-销售明细-20260914-20260918.xls",
+      "sales_file": "满减-订单明细-20260914-20260918.xlsx",
+      "activity_file": "满减-活动明细-20260914-20260918.xlsx"
+    },
+    "满赠": {
+      "name": "雪碧抱枕",
+      "type": "满赠",
+      "start_at": "2026-08-21 15:54:00",
+      "end_at": "2027-08-31 15:54:00",
+      "required_order_status": "已完成",
+      "threshold": 100,
+      "gift_product_id": "0877",
+      "gift_product_name": "（雪碧赠品）抱枕一个",
+      "gift_quantity_per_order": 1,
+      "scope": "指定商品；真实样本回归确认组合口径为商品名含“雪碧”的商品行",
+      "order_file": "满赠订单明细_20260821-20260831.xls",
+      "sales_file": "满赠销售明细_20260821-20260831.xls",
+      "activity_file": "满赠活动明细_20260821-20260831.xls"
+    }
+  }
+}

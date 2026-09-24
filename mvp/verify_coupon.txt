@@ -1,0 +1,73 @@
+== A. 全表行数快照 ==
+  dealer_platform              = 1
+  customer                     = 2292
+  product                      = 9129
+  order_header                 = 2925
+  order_line                   = 59631
+  tpm_application              = 1
+  activity                     = 2
+  activity_rule                = 2
+  activity_rule_benefit        = 2
+  activity_scope               = 30
+  order_activity               = 234
+  fulfillment                  = 2925
+  cross_mapping                = 0
+  coupon_ledger                = 1
+  rule_catalog                 = 3
+  result_calc_batch            = 3
+  result_entitlement           = 234
+  result_release_candidate     = 234
+  result_fee                   = 2
+  result_quality_issue         = 7
+  raw_import_batch             = 3
+  raw_file                     = 11
+  std_field_mapping            = 0
+  std_quality_check            = 0
+
+== B. 满赠 activity (应 tpm_id=NULL) ==
+  (1, '可口可乐满减', 1, '非券类')
+  (2, '满赠优惠', None, '非券类')
+
+== C. result_fee 全部 (满赠应 settle_status=按赠品数量统计) ==
+  (1, 1, 1, '待结算', 2040, 0, 1995)
+  (2, None, 2, '按赠品数量统计(不结算单价)', 0, 0, 0)
+
+== D. coupon_ledger 明细 ==
+  (1, '202609091700313431', 'test1', 7, '', '2026-09-09 17:00:31', '2026-09-09 16:50-2026-09-12 16:50', '已使用', '2026-09-10 16:18:48', '1012420526026091000081', 200, '2026-09')
+
+== E. 券->订单关联核验 ==
+  ('202609091700313431', '1012420526026091000081', 713, '已完成', '2026-09-10 16:18:49')
+
+== F. result_quality_issue 按批次分组 ==
+  ('小凡', 1, '权益已计未达释放节点', '提示')
+  ('小凡', 1, '权益已计未达释放节点', '提示')
+  ('小凡', 1, '权益已计未达释放节点', '提示')
+  ('小凡', 1, '商品跨系统匹配缺口', '警告')
+  ('满赠接入', 2, '赠品已发但无活动明细记录', '警告')
+  ('优惠券接入', 3, '优惠券数据已按文本重导,精度阻断解除', '提示')
+  ('优惠券接入', 3, '券类理论优惠核算暂不可行', '警告')
+
+== G. result_calc_batch 全部 ==
+  (1, '2026-09-22', 'v1', 1, '小凡')
+  (2, '2026-09-22', 'v1', 2, '满赠接入')
+  (3, '2026-09-22', 'v1', 3, '优惠券接入')
+
+== H. raw_import_batch / raw_file ==
+  BATCH (1, 'KM-XLQ-MJ-20260831-20260917', '快马', '深圳市兴路强商贸有限公司', '小凡')
+  BATCH (2, 'KM-XLQ-MZ-20260819-20260831', '快马', '深圳市兴路强商贸有限公司', '满赠接入')
+  BATCH (3, 'KM-XLQ-YHQ-20260909-20260912', '快马', '深圳市兴路强商贸有限公司', '优惠券接入')
+  FILES (1, 5, '商品,客户,活动明细,订单,销售')
+  FILES (2, 3, '活动明细,订单,销售')
+  FILES (3, 3, '活动明细,订单,销售')
+
+== I. 满减/满赠权益与释放复核 ==
+  entitlement 总 = 234
+  满减(batch1) 权益 = 136
+  满赠(batch2) 权益 = 98
+  一致性分布 = [('一致', 234)]
+  释放候选(是) batch1 = 133
+  释放候选(否) batch1 = 3
+  释放候选(是) batch2 = 98
+
+== J. FK 违例 ==
+  []

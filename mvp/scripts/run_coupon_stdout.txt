@@ -1,0 +1,19 @@
+== 0. 优惠券接入 == batch_id= 3  dealer_platform_id= 1
+  活动明细: sig=HTML sheet=html 行=1
+  订单: sig=BIFF sheet=订货明细 行=8594
+  销售: sig=OOXML sheet=销售明细 行=8541
+
+== 1. coupon_ledger == 载入= 1  客户未匹配= 0 []
+  [OK] 券202609091700313431 使用订单号=1012420526026091000081(len=22) -> order_id=713 状态=已完成 下单=2026-09-10 16:18:49
+== 2. 券->订单关联 == 命中= 1  未命中= 0 []
+
+== 3. RESULT == calc_batch_id= 3  质量台账=2(精度解除提示 + 券核算暂不可行警告)
+
+== 4. 汇总 ==
+  coupon_ledger: 1
+  raw_import_batch: 3
+  raw_file: 11
+  result_calc_batch: 3
+  result_quality_issue: 9
+  coupon_ledger 明细: [(1, '202609091700313431', 'test1', 7, '已使用', '1012420526026091000081', 200, '2026-09')]
+  FK violations: []

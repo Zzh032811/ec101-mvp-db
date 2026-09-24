@@ -1,0 +1,49 @@
+== 0. 库重建 == tables= 25
+
+== 1. RAW 登记 == batch_id= 1
+  订单: sig=BIFF sheet=订货明细 数据行=36157
+  销售: sig=OOXML sheet=销售明细 数据行=31338
+  活动明细: sig=HTML sheet=html 数据行=937
+  客户: sig=OOXML sheet=客户列表 数据行=2273
+  商品: sig=OOXML sheet=Product 数据行=9129
+
+== 2. dealer_platform == id= 1
+
+== 3. customer == 读取行= 2273  入库唯一客户= 2273
+
+== 4. product == 读取行= 9129  入库唯一商品(按商品编号)= 9129  条码索引= 8746
+
+== 5. order_header == 唯一订单= 1764  客户匹配 hit= 1762  miss= 2
+== 5b. order_line == 入库行= 35946  合并重复(订单,商品)= 211
+    商品匹配: 按商品编号 hit= 34587  按条码兜底 hit= 726  miss= 844  匹配率=97.7%
+
+== 6. tpm_application == id= 1  预算= 30000.0  费用支付部门=渠道市场部 发票抬头=装瓶厂
+
+== 7. activity == id= 1  可口可乐满减 满300立减15(定额) 品牌=可口可乐 客户类型6项
+
+== 8. order_activity == 活动明细唯一订单= 136  入库= 136  未匹配到订单= 0
+
+== 9. fulfillment == 订单总数= 1764  T-2候选(已完成且≤ 2026-09-20 00:00:00 )= 1561
+
+== 10. RESULT == calc_batch_id= 1  calc_date= 2026-09-22
+== 10a. result_entitlement == 计= 136  一致= 136  差异= 0  窗外= 0  未达300= 0
+     Σ理论权益= 2040.0  Σ平台实际优惠= 2040.0
+== 10b. result_release_candidate == 可释放= 133  暂不可释放= 3  可释放实际优惠合计= 1995.0
+== 10c. result_fee == 实际优惠总额= 2040.0  本次可结算(T-2)= 1995.0  预算= 30000.0  预算余量= 28005.0  承担方= 渠道市场部(发票抬头:装瓶厂)
+== 10d. result_quality_issue == 记录数= 5  (未达释放 3 /活动未匹配 0 /商品缺口 True /客户缺口 True )
+
+== 11. 入库汇总 ==
+  customer: 2273
+  product: 9129
+  order_header: 1764
+  order_line: 35946
+  tpm_application: 1
+  activity: 1
+  activity_rule: 1
+  activity_scope: 7
+  order_activity: 136
+  fulfillment: 1764
+  result_entitlement: 136
+  result_release_candidate: 136
+  result_fee: 1
+  result_quality_issue: 5

@@ -1,0 +1,32 @@
+业务表数= 24
+表清单= activity, activity_rule, activity_rule_benefit, activity_scope, coupon_ledger, cross_mapping, customer, dealer_platform, fulfillment, order_activity, order_header, order_line, product, raw_file, raw_import_batch, result_calc_batch, result_entitlement, result_fee, result_quality_issue, result_release_candidate, rule_catalog, std_field_mapping, std_quality_check, tpm_application
+---快照---
+  dealer_platform= 1
+  customer= 2273
+  product= 9129
+  order_header= 2925
+  order_line= 59631
+  tpm_application= 1
+  activity= 2
+  activity_rule= 2
+  activity_rule_benefit= 2
+  activity_scope= 13
+  order_activity= 234
+  fulfillment= 2925
+  cross_mapping= 0
+  coupon_ledger= 0
+  result_calc_batch= 2
+  rule_catalog= 3
+  result_entitlement= 234
+  result_release_candidate= 234
+  result_fee= 2
+  result_quality_issue= 9
+  raw_import_batch= 2
+  raw_file= 8
+满减(batch1): (136, 2040, 2040)
+满赠(batch2): (98, 98, 98)
+release batch1: [(0, 3), (1, 133)]
+release batch2: [(1, 98)]
+null product_id lines= 1115
+null customer orders= 2
+FK= []

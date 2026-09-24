@@ -1,0 +1,28 @@
+== 0. 满赠追加 == batch_id= 2
+  订单: sig=BIFF sheet=订货明细 行=26254
+  活动明细: sig=HTML sheet=html 行=250
+  销售: sig=OOXML sheet=销售明细 行=26074
+
+== 1. 基础 == dealer= 1  赠品product_id= 90
+== 2. order_header == 满赠文件唯一订单= 1257  新增= 1161  复用(与满减重叠)= 96
+== 2b. order_line == 新增行= 23685
+
+== 3. activity == id= 2  满赠优惠 满100立赠抱枕x1 指定商品 限购1 客户类型5项
+== 4. order_activity == 活动明细订单= 98  入库= 98  未匹配= 0  孤儿赠品行订单(有赠品无活动明细)= 1 ['1012420526026081900082']
+
+== 5. RESULT == calc_batch_id= 2
+== 5a. result_entitlement == 计= 98  一致= 98  差异= 0  Σ应赠= 98.0  Σ实赠= 98.0
+== 5b. release == 可释放= 98  暂不可释放= 0
+== 5c. result_fee == 金额优惠=0 赠品结算基础(数)= 98.0  单价=未确认 金额=0 状态=待确认赠品结算单价
+== 5d. quality_issue == 记录= 4
+
+== 6. 汇总 ==
+  order_header: 2925
+  order_line: 59631
+  activity: 2
+  order_activity: 234
+  result_entitlement: 234
+  result_release_candidate: 234
+  result_fee: 2
+  result_quality_issue: 9
+FK violations: []

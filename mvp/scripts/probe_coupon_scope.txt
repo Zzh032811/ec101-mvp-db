@@ -1,0 +1,14 @@
+=== 活动明细 === sig HTML rows 1
+header ['优惠券名称', '优惠券编号', '领取人', '客户编号', '所属业务员', '领取时间', '使用期限', '状态', '使用时间', '使用订单号', '优惠金额']
+['test1', '202609091700313431', '可口可乐客户测试', 'WX-00000000000007507893', '', '2026/9/9 17:00:31', '2026-09-09 16:50-2026-09-12 16:50', '已使用', '2026/9/10 16:18:48', '1012420526026091000081', '200.0000']
+
+order_header has use_order_no? [(713, '1012420526026091000081', '2026-09-10 16:18:49', '已完成')]
+customer has cust_no? [(7, 'WX-00000000000007507893', '可口可乐客户测试')]
+order_header total (2925,)
+order_header order_no like 10124205260260910% (110,)
+order_no sample max/min time [('2026-08-19 00:03:18', '2026-09-17 23:38:59')]
+
+=== 订单明细 === rows 8594 distinct orders 402 distinct customers 306
+time min/max(raw text) 2026/9/10 0:01:47 2026/9/9 9:45:11
+coupon-window orders already in order_header: (402,) of 402
+use_order_no in 订单明细 orders? True
