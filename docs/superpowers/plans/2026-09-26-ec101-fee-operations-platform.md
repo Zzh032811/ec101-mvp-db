@@ -90,7 +90,36 @@
 
   Commit as `feat: add TPM operations workspaces`.
 
-### Task 3: Add KPI/distribution planning views and publish
+### Task 3: Add business-data query and export
+
+**Files:**
+- Modify: `ec101-fee-platform-v1/app/page.tsx`
+
+**Interfaces:**
+- Consumes: Task 1 navigation and Task 2 workspace shell.
+- Produces: read-only `业务数据` workspace with object tabs, filters, details, and UTF-8 BOM CSV export.
+
+- [ ] **Step 1: Write the failing scope checks**
+
+  Confirm the navigation does not yet contain `业务数据`, and the page has no export action for standardized records.
+
+- [ ] **Step 2: Implement the business-data workspace**
+
+  Add tabs for 订单、订单明细、活动、活动明细、客户、商品、履约记录、订单活动关系. Use representative rows derived from the verified snapshot, and show standardized business fields rather than physical table names.
+
+- [ ] **Step 3: Implement read-only detail and CSV export**
+
+  Add object filtering, a detail drawer with source batch/file/row context, and a browser download that serializes the current object/filter view to UTF-8 BOM CSV. Do not add write operations to CORE facts.
+
+- [ ] **Step 4: Run build and page-level lint verification**
+
+  Run `npm run build` and `npx oxlint app/page.tsx app/layout.tsx`. Expected: both exit 0.
+
+- [ ] **Step 5: Commit**
+
+  Commit as `feat: add standardized business data explorer`.
+
+### Task 4: Add KPI/distribution planning views and publish
 
 **Files:**
 - Modify: `ec101-fee-platform-v1/app/page.tsx`
