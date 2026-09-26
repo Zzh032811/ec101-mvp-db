@@ -6,7 +6,7 @@
 
 **Architecture:** Add a Python standard-library API under `api/` that owns the SQLite queries and exposes a stable business-object contract. Replace hardcoded business rows in the Site with API state, while keeping the existing UI controls and export behavior.
 
-**Tech Stack:** Python 3.10+ `http.server`/`sqlite3`, React/TypeScript/Vinext, Python `unittest`.
+**Tech Stack:** Python 3.9+ `http.server`/`sqlite3`, React/TypeScript/Vinext, Python `unittest`.
 
 **Spec:** `docs/superpowers/specs/2026-09-26-ec101-local-readonly-api-design.md`
 

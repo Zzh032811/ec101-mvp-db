@@ -20,7 +20,7 @@
 
 ## 运行方式
 
-API 使用 Python 标准库 `http.server` 与 `sqlite3`，不依赖操作系统特定命令或第三方包：
+API 使用 Python 3.9+ 标准库 `http.server` 与 `sqlite3`，不依赖操作系统特定命令或第三方包：
 
 ```text
 python api/server.py
