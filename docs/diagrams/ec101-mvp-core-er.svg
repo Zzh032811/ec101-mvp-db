@@ -1,0 +1,528 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 2200 1980" role="img" aria-labelledby="title desc">
+<title id="title">EC101 CORE 业务事实层 ER 图</title>
+<desc id="desc">根据 ec101_mvp_sqlite.sql 生成的 CORE 层实体关系图</desc>
+<defs><filter id="shadow" x="-10%" y="-10%" width="120%" height="120%"><feDropShadow dx="2" dy="3" stdDeviation="3" flood-opacity="0.12"/></filter></defs>
+<rect width="100%" height="100%" fill="#ffffff"/>
+<text x="60" y="35" font-family="Arial, sans-serif" font-size="24" font-weight="700" fill="#102A43">EC101 CORE 业务事实层 ER 图</text>
+<text x="60" y="62" font-family="Arial, sans-serif" font-size="13" fill="#627D98">来源：mvp/ddl/ec101_mvp_sqlite.sql · 仅展示 CORE 层 14 张表 · PK 主键 / FK 外键 / UK 唯一键</text>
+<path d="M 890.0 144.5 L 380.0 538.5" stroke="#9FB3C8" stroke-width="1.4" fill="none"/>
+<rect x="619.0" y="332.5" width="32" height="18" rx="9" fill="#ffffff" stroke="#D9E2EC"/>
+<text x="635.0" y="345.5" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#52606D">1:N</text>
+<path d="M 890.0 144.5 L 740.0 538.5" stroke="#9FB3C8" stroke-width="1.4" fill="none"/>
+<rect x="799.0" y="332.5" width="32" height="18" rx="9" fill="#ffffff" stroke="#D9E2EC"/>
+<text x="815.0" y="345.5" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#52606D">1:N</text>
+<path d="M 890.0 144.5 L 350.0 1035.0" stroke="#9FB3C8" stroke-width="1.4" fill="none"/>
+<rect x="604.0" y="580.8" width="32" height="18" rx="9" fill="#ffffff" stroke="#D9E2EC"/>
+<text x="620.0" y="593.8" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#52606D">1:N</text>
+<path d="M 1045.0 239.0 L 1045.0 390.0" stroke="#9FB3C8" stroke-width="1.4" fill="none"/>
+<rect x="1029.0" y="305.5" width="32" height="18" rx="9" fill="#ffffff" stroke="#D9E2EC"/>
+<text x="1045.0" y="318.5" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#52606D">1:N</text>
+<path d="M 1200.0 144.5 L 1220.0 1578.5" stroke="#9FB3C8" stroke-width="1.4" fill="none"/>
+<rect x="1194.0" y="852.5" width="32" height="18" rx="9" fill="#ffffff" stroke="#D9E2EC"/>
+<text x="1210.0" y="865.5" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#52606D">1:N</text>
+<path d="M 1200.0 144.5 L 1590.0 1565.0" stroke="#9FB3C8" stroke-width="1.4" fill="none"/>
+<rect x="1379.0" y="845.8" width="32" height="18" rx="9" fill="#ffffff" stroke="#D9E2EC"/>
+<text x="1395.0" y="858.8" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#52606D">1:N</text>
+<path d="M 1270.0 185.0 L 1200.0 538.5" stroke="#9FB3C8" stroke-width="1.4" fill="none"/>
+<rect x="1219.0" y="352.8" width="32" height="18" rx="9" fill="#ffffff" stroke="#D9E2EC"/>
+<text x="1235.0" y="365.8" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#52606D">1:N</text>
+<path d="M 225.0 687.0 L 195.0 900.0" stroke="#9FB3C8" stroke-width="1.4" fill="none"/>
+<rect x="194.0" y="784.5" width="32" height="18" rx="9" fill="#ffffff" stroke="#D9E2EC"/>
+<text x="210.0" y="797.5" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#52606D">1:N</text>
+<path d="M 380.0 538.5 L 1220.0 1578.5" stroke="#9FB3C8" stroke-width="1.4" fill="none"/>
+<rect x="784.0" y="1049.5" width="32" height="18" rx="9" fill="#ffffff" stroke="#D9E2EC"/>
+<text x="800.0" y="1062.5" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#52606D">1:N</text>
+<path d="M 430.0 538.5 L 350.0 1565.0" stroke="#9FB3C8" stroke-width="1.4" fill="none"/>
+<rect x="374.0" y="1042.8" width="32" height="18" rx="9" fill="#ffffff" stroke="#D9E2EC"/>
+<text x="390.0" y="1055.8" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#52606D">1:N</text>
+<path d="M 195.0 1170.0 L 195.0 1430.0" stroke="#9FB3C8" stroke-width="1.4" fill="none"/>
+<rect x="179.0" y="1291.0" width="32" height="18" rx="9" fill="#ffffff" stroke="#D9E2EC"/>
+<text x="195.0" y="1304.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#52606D">1:N</text>
+<path d="M 350.0 1035.0 L 430.0 1578.5" stroke="#9FB3C8" stroke-width="1.4" fill="none"/>
+<rect x="374.0" y="1297.8" width="32" height="18" rx="9" fill="#ffffff" stroke="#D9E2EC"/>
+<text x="390.0" y="1310.8" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#52606D">1:N</text>
+<path d="M 350.0 1035.0 L 850.0 1551.5" stroke="#9FB3C8" stroke-width="1.4" fill="none"/>
+<rect x="584.0" y="1284.2" width="32" height="18" rx="9" fill="#ffffff" stroke="#D9E2EC"/>
+<text x="600.0" y="1297.2" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#52606D">1:1</text>
+<path d="M 1045.0 687.0 L 1045.0 900.0" stroke="#9FB3C8" stroke-width="1.4" fill="none"/>
+<rect x="1029.0" y="784.5" width="32" height="18" rx="9" fill="#ffffff" stroke="#D9E2EC"/>
+<text x="1045.0" y="797.5" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#52606D">1:N</text>
+<path d="M 1200.0 538.5 L 1260.0 994.5" stroke="#9FB3C8" stroke-width="1.4" fill="none"/>
+<rect x="1214.0" y="757.5" width="32" height="18" rx="9" fill="#ffffff" stroke="#D9E2EC"/>
+<text x="1230.0" y="770.5" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#52606D">1:N</text>
+<path d="M 890.0 538.5 L 740.0 1578.5" stroke="#9FB3C8" stroke-width="1.4" fill="none"/>
+<rect x="799.0" y="1049.5" width="32" height="18" rx="9" fill="#ffffff" stroke="#D9E2EC"/>
+<text x="815.0" y="1062.5" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#52606D">1:N</text>
+<path d="M 1200.0 1021.5 L 1630.0 1021.5" stroke="#9FB3C8" stroke-width="1.4" fill="none"/>
+<rect x="1399.0" y="1012.5" width="32" height="18" rx="9" fill="#ffffff" stroke="#D9E2EC"/>
+<text x="1415.0" y="1025.5" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#52606D">1:N</text>
+<path d="M 890.0 1021.5 L 740.0 1578.5" stroke="#9FB3C8" stroke-width="1.4" fill="none"/>
+<rect x="799.0" y="1291.0" width="32" height="18" rx="9" fill="#ffffff" stroke="#D9E2EC"/>
+<text x="815.0" y="1304.0" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#52606D">1:N</text>
+<g filter="url(#shadow)"><rect x="890" y="50" width="310" height="189" rx="8" fill="#ffffff" stroke="#167E6D" stroke-width="1.5"/><rect x="890" y="50" width="310" height="42" rx="8" fill="#E8F5F2"/><rect x="890" y="84" width="310" height="8" fill="#E8F5F2"/>
+<text x="904" y="77" font-family="Arial, sans-serif" font-size="16" font-weight="700" fill="#167E6D">经销商·平台</text><text x="1186" y="76" text-anchor="end" font-family="Arial, sans-serif" font-size="11" fill="#829AB1">dealer_platform</text>
+<rect x="891" y="92" width="308" height="27" fill="#F8FAFC"/>
+<text x="902" y="110" font-family="Arial, sans-serif" font-size="11" fill="#52606D">INTEGER</text>
+<text x="976" y="110" font-family="Arial, sans-serif" font-size="11.5" fill="#102A43">dealer_platform_id</text>
+<text x="1115" y="110" font-family="Arial, sans-serif" font-size="10" font-weight="700" fill="#167E6D">PK</text>
+<text x="1190" y="110" text-anchor="end" font-family="Arial, sans-serif" font-size="10" fill="#829AB1">内部主键</text>
+<text x="902" y="137" font-family="Arial, sans-serif" font-size="11" fill="#52606D">TEXT</text>
+<text x="976" y="137" font-family="Arial, sans-serif" font-size="11.5" fill="#102A43">dealer_name</text>
+<text x="1190" y="137" text-anchor="end" font-family="Arial, sans-serif" font-size="10" fill="#829AB1">经销商名称</text>
+<rect x="891" y="146" width="308" height="27" fill="#F8FAFC"/>
+<text x="902" y="164" font-family="Arial, sans-serif" font-size="11" fill="#52606D">TEXT</text>
+<text x="976" y="164" font-family="Arial, sans-serif" font-size="11.5" fill="#102A43">platform_name</text>
+<text x="1190" y="164" text-anchor="end" font-family="Arial, sans-serif" font-size="10" fill="#829AB1">第三方平台</text>
+<text x="902" y="191" font-family="Arial, sans-serif" font-size="11" fill="#52606D">TEXT</text>
+<text x="976" y="191" font-family="Arial, sans-serif" font-size="11.5" fill="#102A43">swire_partner_code</text>
+<text x="1190" y="191" text-anchor="end" font-family="Arial, sans-serif" font-size="10" fill="#829AB1">太古合作伙伴编号</text>
+<rect x="891" y="200" width="308" height="27" fill="#F8FAFC"/>
+<text x="902" y="218" font-family="Arial, sans-serif" font-size="11" fill="#52606D">TEXT</text>
+<text x="976" y="218" font-family="Arial, sans-serif" font-size="11.5" fill="#102A43">admission_status</text>
+<text x="1190" y="218" text-anchor="end" font-family="Arial, sans-serif" font-size="10" fill="#829AB1">准入状态</text>
+</g>
+<g filter="url(#shadow)"><rect x="1270" y="50" width="310" height="270" rx="8" fill="#ffffff" stroke="#167E6D" stroke-width="1.5"/><rect x="1270" y="50" width="310" height="42" rx="8" fill="#E8F5F2"/><rect x="1270" y="84" width="310" height="8" fill="#E8F5F2"/>
+<text x="1284" y="77" font-family="Arial, sans-serif" font-size="16" font-weight="700" fill="#167E6D">TPM 促销申请</text><text x="1566" y="76" text-anchor="end" font-family="Arial, sans-serif" font-size="11" fill="#829AB1">tpm_application</text>
+<rect x="1271" y="92" width="308" height="27" fill="#F8FAFC"/>
+<text x="1282" y="110" font-family="Arial, sans-serif" font-size="11" fill="#52606D">INTEGER</text>
+<text x="1356" y="110" font-family="Arial, sans-serif" font-size="11.5" fill="#102A43">tpm_id</text>
+<text x="1495" y="110" font-family="Arial, sans-serif" font-size="10" font-weight="700" fill="#167E6D">PK</text>
+<text x="1570" y="110" text-anchor="end" font-family="Arial, sans-serif" font-size="10" fill="#829AB1">内部主键</text>
+<text x="1282" y="137" font-family="Arial, sans-serif" font-size="11" fill="#52606D">TEXT</text>
+<text x="1356" y="137" font-family="Arial, sans-serif" font-size="11.5" fill="#102A43">tpm_code</text>
+<text x="1495" y="137" font-family="Arial, sans-serif" font-size="10" font-weight="700" fill="#167E6D">UK</text>
+<text x="1570" y="137" text-anchor="end" font-family="Arial, sans-serif" font-size="10" fill="#829AB1">TPM 单号</text>
+<rect x="1271" y="146" width="308" height="27" fill="#F8FAFC"/>
+<text x="1282" y="164" font-family="Arial, sans-serif" font-size="11" fill="#52606D">TEXT</text>
+<text x="1356" y="164" font-family="Arial, sans-serif" font-size="11.5" fill="#102A43">theme</text>
+<text x="1570" y="164" text-anchor="end" font-family="Arial, sans-serif" font-size="10" fill="#829AB1">促销主题</text>
+<text x="1282" y="191" font-family="Arial, sans-serif" font-size="11" fill="#52606D">TEXT</text>
+<text x="1356" y="191" font-family="Arial, sans-serif" font-size="11.5" fill="#102A43">promo_type</text>
+<text x="1570" y="191" text-anchor="end" font-family="Arial, sans-serif" font-size="10" fill="#829AB1">促销类型</text>
+<rect x="1271" y="200" width="308" height="27" fill="#F8FAFC"/>
+<text x="1282" y="218" font-family="Arial, sans-serif" font-size="11" fill="#52606D">NUMERIC</text>
+<text x="1356" y="218" font-family="Arial, sans-serif" font-size="11.5" fill="#102A43">apply_amount</text>
+<text x="1570" y="218" text-anchor="end" font-family="Arial, sans-serif" font-size="10" fill="#829AB1">预算金额</text>
+<text x="1282" y="245" font-family="Arial, sans-serif" font-size="11" fill="#52606D">TEXT</text>
+<text x="1356" y="245" font-family="Arial, sans-serif" font-size="11.5" fill="#102A43">fee_pay_dept</text>
+<text x="1570" y="245" text-anchor="end" font-family="Arial, sans-serif" font-size="10" fill="#829AB1">费用承担方</text>
+<rect x="1271" y="254" width="308" height="27" fill="#F8FAFC"/>
+<text x="1282" y="272" font-family="Arial, sans-serif" font-size="11" fill="#52606D">TEXT</text>
+<text x="1356" y="272" font-family="Arial, sans-serif" font-size="11.5" fill="#102A43">plan_start / plan_end</text>
+<text x="1570" y="272" text-anchor="end" font-family="Arial, sans-serif" font-size="10" fill="#829AB1">计划期间</text>
+<text x="1282" y="299" font-family="Arial, sans-serif" font-size="11" fill="#52606D">TEXT</text>
+<text x="1356" y="299" font-family="Arial, sans-serif" font-size="11.5" fill="#102A43">approval_status</text>
+<text x="1570" y="299" text-anchor="end" font-family="Arial, sans-serif" font-size="10" fill="#829AB1">审批状态</text>
+</g>
+<g filter="url(#shadow)"><rect x="70" y="390" width="310" height="297" rx="8" fill="#ffffff" stroke="#167E6D" stroke-width="1.5"/><rect x="70" y="390" width="310" height="42" rx="8" fill="#E8F5F2"/><rect x="70" y="424" width="310" height="8" fill="#E8F5F2"/>
+<text x="84" y="417" font-family="Arial, sans-serif" font-size="16" font-weight="700" fill="#167E6D">客户</text><text x="366" y="416" text-anchor="end" font-family="Arial, sans-serif" font-size="11" fill="#829AB1">customer</text>
+<rect x="71" y="432" width="308" height="27" fill="#F8FAFC"/>
+<text x="82" y="450" font-family="Arial, sans-serif" font-size="11" fill="#52606D">INTEGER</text>
+<text x="156" y="450" font-family="Arial, sans-serif" font-size="11.5" fill="#102A43">customer_id</text>
+<text x="295" y="450" font-family="Arial, sans-serif" font-size="10" font-weight="700" fill="#167E6D">PK</text>
+<text x="370" y="450" text-anchor="end" font-family="Arial, sans-serif" font-size="10" fill="#829AB1">内部主键</text>
+<text x="82" y="477" font-family="Arial, sans-serif" font-size="11" fill="#52606D">INTEGER</text>
+<text x="156" y="477" font-family="Arial, sans-serif" font-size="11.5" fill="#102A43">dealer_platform_id</text>
+<text x="295" y="477" font-family="Arial, sans-serif" font-size="10" font-weight="700" fill="#167E6D">FK</text>
+<text x="370" y="477" text-anchor="end" font-family="Arial, sans-serif" font-size="10" fill="#829AB1">→ dealer_platform</text>
+<rect x="71" y="486" width="308" height="27" fill="#F8FAFC"/>
+<text x="82" y="504" font-family="Arial, sans-serif" font-size="11" fill="#52606D">TEXT</text>
+<text x="156" y="504" font-family="Arial, sans-serif" font-size="11.5" fill="#102A43">platform_customer_no</text>
+<text x="295" y="504" font-family="Arial, sans-serif" font-size="10" font-weight="700" fill="#167E6D">UK</text>
+<text x="370" y="504" text-anchor="end" font-family="Arial, sans-serif" font-size="10" fill="#829AB1">平台客户编号</text>
+<text x="82" y="531" font-family="Arial, sans-serif" font-size="11" fill="#52606D">TEXT</text>
+<text x="156" y="531" font-family="Arial, sans-serif" font-size="11.5" fill="#102A43">customer_name</text>
+<text x="370" y="531" text-anchor="end" font-family="Arial, sans-serif" font-size="10" fill="#829AB1">客户名称</text>
+<rect x="71" y="540" width="308" height="27" fill="#F8FAFC"/>
+<text x="82" y="558" font-family="Arial, sans-serif" font-size="11" fill="#52606D">TEXT</text>
+<text x="156" y="558" font-family="Arial, sans-serif" font-size="11.5" fill="#102A43">customer_type / level</text>
+<text x="370" y="558" text-anchor="end" font-family="Arial, sans-serif" font-size="10" fill="#829AB1">客户类型 / 等级</text>
+<text x="82" y="585" font-family="Arial, sans-serif" font-size="11" fill="#52606D">TEXT</text>
+<text x="156" y="585" font-family="Arial, sans-serif" font-size="11.5" fill="#102A43">customer_region</text>
+<text x="370" y="585" text-anchor="end" font-family="Arial, sans-serif" font-size="10" fill="#829AB1">区域</text>
+<rect x="71" y="594" width="308" height="27" fill="#F8FAFC"/>
+<text x="82" y="612" font-family="Arial, sans-serif" font-size="11" fill="#52606D">TEXT</text>
+<text x="156" y="612" font-family="Arial, sans-serif" font-size="11.5" fill="#102A43">salesperson_name</text>
+<text x="370" y="612" text-anchor="end" font-family="Arial, sans-serif" font-size="10" fill="#829AB1">业务员</text>
+<text x="82" y="639" font-family="Arial, sans-serif" font-size="11" fill="#52606D">TEXT</text>
+<text x="156" y="639" font-family="Arial, sans-serif" font-size="11.5" fill="#102A43">swire_outlet_no</text>
+<text x="370" y="639" text-anchor="end" font-family="Arial, sans-serif" font-size="10" fill="#829AB1">太古售点号</text>
+<rect x="71" y="648" width="308" height="27" fill="#F8FAFC"/>
+<text x="82" y="666" font-family="Arial, sans-serif" font-size="11" fill="#52606D">TEXT</text>
+<text x="156" y="666" font-family="Arial, sans-serif" font-size="11.5" fill="#102A43">status</text>
+<text x="370" y="666" text-anchor="end" font-family="Arial, sans-serif" font-size="10" fill="#829AB1">状态</text>
+</g>
+<g filter="url(#shadow)"><rect x="430" y="390" width="310" height="297" rx="8" fill="#ffffff" stroke="#167E6D" stroke-width="1.5"/><rect x="430" y="390" width="310" height="42" rx="8" fill="#E8F5F2"/><rect x="430" y="424" width="310" height="8" fill="#E8F5F2"/>
+<text x="444" y="417" font-family="Arial, sans-serif" font-size="16" font-weight="700" fill="#167E6D">商品</text><text x="726" y="416" text-anchor="end" font-family="Arial, sans-serif" font-size="11" fill="#829AB1">product</text>
+<rect x="431" y="432" width="308" height="27" fill="#F8FAFC"/>
+<text x="442" y="450" font-family="Arial, sans-serif" font-size="11" fill="#52606D">INTEGER</text>
+<text x="516" y="450" font-family="Arial, sans-serif" font-size="11.5" fill="#102A43">product_id</text>
+<text x="655" y="450" font-family="Arial, sans-serif" font-size="10" font-weight="700" fill="#167E6D">PK</text>
+<text x="730" y="450" text-anchor="end" font-family="Arial, sans-serif" font-size="10" fill="#829AB1">内部主键</text>
+<text x="442" y="477" font-family="Arial, sans-serif" font-size="11" fill="#52606D">INTEGER</text>
+<text x="516" y="477" font-family="Arial, sans-serif" font-size="11.5" fill="#102A43">dealer_platform_id</text>
+<text x="655" y="477" font-family="Arial, sans-serif" font-size="10" font-weight="700" fill="#167E6D">FK</text>
+<text x="730" y="477" text-anchor="end" font-family="Arial, sans-serif" font-size="10" fill="#829AB1">→ dealer_platform</text>
+<rect x="431" y="486" width="308" height="27" fill="#F8FAFC"/>
+<text x="442" y="504" font-family="Arial, sans-serif" font-size="11" fill="#52606D">TEXT</text>
+<text x="516" y="504" font-family="Arial, sans-serif" font-size="11.5" fill="#102A43">platform_product_no</text>
+<text x="655" y="504" font-family="Arial, sans-serif" font-size="10" font-weight="700" fill="#167E6D">UK</text>
+<text x="730" y="504" text-anchor="end" font-family="Arial, sans-serif" font-size="10" fill="#829AB1">平台商品编号</text>
+<text x="442" y="531" font-family="Arial, sans-serif" font-size="11" fill="#52606D">TEXT</text>
+<text x="516" y="531" font-family="Arial, sans-serif" font-size="11.5" fill="#102A43">product_name</text>
+<text x="730" y="531" text-anchor="end" font-family="Arial, sans-serif" font-size="10" fill="#829AB1">商品名称</text>
+<rect x="431" y="540" width="308" height="27" fill="#F8FAFC"/>
+<text x="442" y="558" font-family="Arial, sans-serif" font-size="11" fill="#52606D">TEXT</text>
+<text x="516" y="558" font-family="Arial, sans-serif" font-size="11.5" fill="#102A43">brand / category</text>
+<text x="730" y="558" text-anchor="end" font-family="Arial, sans-serif" font-size="10" fill="#829AB1">品牌 / 品类</text>
+<text x="442" y="585" font-family="Arial, sans-serif" font-size="11" fill="#52606D">TEXT</text>
+<text x="516" y="585" font-family="Arial, sans-serif" font-size="11.5" fill="#102A43">spec / barcode</text>
+<text x="730" y="585" text-anchor="end" font-family="Arial, sans-serif" font-size="10" fill="#829AB1">规格 / 条码</text>
+<rect x="431" y="594" width="308" height="27" fill="#F8FAFC"/>
+<text x="442" y="612" font-family="Arial, sans-serif" font-size="11" fill="#52606D">TEXT</text>
+<text x="516" y="612" font-family="Arial, sans-serif" font-size="11.5" fill="#102A43">base_unit</text>
+<text x="730" y="612" text-anchor="end" font-family="Arial, sans-serif" font-size="10" fill="#829AB1">基本单位</text>
+<text x="442" y="639" font-family="Arial, sans-serif" font-size="11" fill="#52606D">NUMERIC</text>
+<text x="516" y="639" font-family="Arial, sans-serif" font-size="11.5" fill="#102A43">actual_stock</text>
+<text x="730" y="639" text-anchor="end" font-family="Arial, sans-serif" font-size="10" fill="#829AB1">实际库存</text>
+<rect x="431" y="648" width="308" height="27" fill="#F8FAFC"/>
+<text x="442" y="666" font-family="Arial, sans-serif" font-size="11" fill="#52606D">TEXT</text>
+<text x="516" y="666" font-family="Arial, sans-serif" font-size="11.5" fill="#102A43">swire_product_code</text>
+<text x="730" y="666" text-anchor="end" font-family="Arial, sans-serif" font-size="10" fill="#829AB1">太古产品代码</text>
+</g>
+<g filter="url(#shadow)"><rect x="890" y="390" width="310" height="297" rx="8" fill="#ffffff" stroke="#B16A13" stroke-width="1.5"/><rect x="890" y="390" width="310" height="42" rx="8" fill="#FFF4E6"/><rect x="890" y="424" width="310" height="8" fill="#FFF4E6"/>
+<text x="904" y="417" font-family="Arial, sans-serif" font-size="16" font-weight="700" fill="#B16A13">活动</text><text x="1186" y="416" text-anchor="end" font-family="Arial, sans-serif" font-size="11" fill="#829AB1">activity</text>
+<rect x="891" y="432" width="308" height="27" fill="#F8FAFC"/>
+<text x="902" y="450" font-family="Arial, sans-serif" font-size="11" fill="#52606D">INTEGER</text>
+<text x="976" y="450" font-family="Arial, sans-serif" font-size="11.5" fill="#102A43">activity_id</text>
+<text x="1115" y="450" font-family="Arial, sans-serif" font-size="10" font-weight="700" fill="#B16A13">PK</text>
+<text x="1190" y="450" text-anchor="end" font-family="Arial, sans-serif" font-size="10" fill="#829AB1">内部主键</text>
+<text x="902" y="477" font-family="Arial, sans-serif" font-size="11" fill="#52606D">INTEGER</text>
+<text x="976" y="477" font-family="Arial, sans-serif" font-size="11.5" fill="#102A43">dealer_platform_id</text>
+<text x="1115" y="477" font-family="Arial, sans-serif" font-size="10" font-weight="700" fill="#B16A13">FK</text>
+<text x="1190" y="477" text-anchor="end" font-family="Arial, sans-serif" font-size="10" fill="#829AB1">→ dealer_platform</text>
+<rect x="891" y="486" width="308" height="27" fill="#F8FAFC"/>
+<text x="902" y="504" font-family="Arial, sans-serif" font-size="11" fill="#52606D">INTEGER</text>
+<text x="976" y="504" font-family="Arial, sans-serif" font-size="11.5" fill="#102A43">tpm_id</text>
+<text x="1115" y="504" font-family="Arial, sans-serif" font-size="10" font-weight="700" fill="#B16A13">FK</text>
+<text x="1190" y="504" text-anchor="end" font-family="Arial, sans-serif" font-size="10" fill="#829AB1">→ tpm_application</text>
+<text x="902" y="531" font-family="Arial, sans-serif" font-size="11" fill="#52606D">TEXT</text>
+<text x="976" y="531" font-family="Arial, sans-serif" font-size="11.5" fill="#102A43">activity_name</text>
+<text x="1115" y="531" font-family="Arial, sans-serif" font-size="10" font-weight="700" fill="#B16A13">UK</text>
+<text x="1190" y="531" text-anchor="end" font-family="Arial, sans-serif" font-size="10" fill="#829AB1">活动名称</text>
+<rect x="891" y="540" width="308" height="27" fill="#F8FAFC"/>
+<text x="902" y="558" font-family="Arial, sans-serif" font-size="11" fill="#52606D">TEXT</text>
+<text x="976" y="558" font-family="Arial, sans-serif" font-size="11.5" fill="#102A43">activity_category</text>
+<text x="1190" y="558" text-anchor="end" font-family="Arial, sans-serif" font-size="10" fill="#829AB1">券类 / 非券类</text>
+<text x="902" y="585" font-family="Arial, sans-serif" font-size="11" fill="#52606D">TEXT</text>
+<text x="976" y="585" font-family="Arial, sans-serif" font-size="11.5" fill="#102A43">promotion_type</text>
+<text x="1190" y="585" text-anchor="end" font-family="Arial, sans-serif" font-size="10" fill="#829AB1">满减 / 满赠</text>
+<rect x="891" y="594" width="308" height="27" fill="#F8FAFC"/>
+<text x="902" y="612" font-family="Arial, sans-serif" font-size="11" fill="#52606D">TEXT</text>
+<text x="976" y="612" font-family="Arial, sans-serif" font-size="11.5" fill="#102A43">start_time / end_time</text>
+<text x="1190" y="612" text-anchor="end" font-family="Arial, sans-serif" font-size="10" fill="#829AB1">活动期间</text>
+<text x="902" y="639" font-family="Arial, sans-serif" font-size="11" fill="#52606D">TEXT</text>
+<text x="976" y="639" font-family="Arial, sans-serif" font-size="11.5" fill="#102A43">activity_status</text>
+<text x="1190" y="639" text-anchor="end" font-family="Arial, sans-serif" font-size="10" fill="#829AB1">活动状态</text>
+<rect x="891" y="648" width="308" height="27" fill="#F8FAFC"/>
+<text x="902" y="666" font-family="Arial, sans-serif" font-size="11" fill="#52606D">TEXT</text>
+<text x="976" y="666" font-family="Arial, sans-serif" font-size="11.5" fill="#102A43">rule_version</text>
+<text x="1190" y="666" text-anchor="end" font-family="Arial, sans-serif" font-size="10" fill="#829AB1">规则版本</text>
+</g>
+<g filter="url(#shadow)"><rect x="40" y="900" width="310" height="270" rx="8" fill="#ffffff" stroke="#3B67B1" stroke-width="1.5"/><rect x="40" y="900" width="310" height="42" rx="8" fill="#EEF4FF"/><rect x="40" y="934" width="310" height="8" fill="#EEF4FF"/>
+<text x="54" y="927" font-family="Arial, sans-serif" font-size="16" font-weight="700" fill="#3B67B1">订单头</text><text x="336" y="926" text-anchor="end" font-family="Arial, sans-serif" font-size="11" fill="#829AB1">order_header</text>
+<rect x="41" y="942" width="308" height="27" fill="#F8FAFC"/>
+<text x="52" y="960" font-family="Arial, sans-serif" font-size="11" fill="#52606D">INTEGER</text>
+<text x="126" y="960" font-family="Arial, sans-serif" font-size="11.5" fill="#102A43">order_id</text>
+<text x="265" y="960" font-family="Arial, sans-serif" font-size="10" font-weight="700" fill="#3B67B1">PK</text>
+<text x="340" y="960" text-anchor="end" font-family="Arial, sans-serif" font-size="10" fill="#829AB1">内部主键</text>
+<text x="52" y="987" font-family="Arial, sans-serif" font-size="11" fill="#52606D">INTEGER</text>
+<text x="126" y="987" font-family="Arial, sans-serif" font-size="11.5" fill="#102A43">dealer_platform_id</text>
+<text x="265" y="987" font-family="Arial, sans-serif" font-size="10" font-weight="700" fill="#3B67B1">FK</text>
+<text x="340" y="987" text-anchor="end" font-family="Arial, sans-serif" font-size="10" fill="#829AB1">→ dealer_platform</text>
+<rect x="41" y="996" width="308" height="27" fill="#F8FAFC"/>
+<text x="52" y="1014" font-family="Arial, sans-serif" font-size="11" fill="#52606D">TEXT</text>
+<text x="126" y="1014" font-family="Arial, sans-serif" font-size="11.5" fill="#102A43">order_no</text>
+<text x="265" y="1014" font-family="Arial, sans-serif" font-size="10" font-weight="700" fill="#3B67B1">UK</text>
+<text x="340" y="1014" text-anchor="end" font-family="Arial, sans-serif" font-size="10" fill="#829AB1">订单号（字符串）</text>
+<text x="52" y="1041" font-family="Arial, sans-serif" font-size="11" fill="#52606D">TEXT</text>
+<text x="126" y="1041" font-family="Arial, sans-serif" font-size="11.5" fill="#102A43">order_time</text>
+<text x="340" y="1041" text-anchor="end" font-family="Arial, sans-serif" font-size="10" fill="#829AB1">下单时间</text>
+<rect x="41" y="1050" width="308" height="27" fill="#F8FAFC"/>
+<text x="52" y="1068" font-family="Arial, sans-serif" font-size="11" fill="#52606D">INTEGER</text>
+<text x="126" y="1068" font-family="Arial, sans-serif" font-size="11.5" fill="#102A43">customer_id</text>
+<text x="265" y="1068" font-family="Arial, sans-serif" font-size="10" font-weight="700" fill="#3B67B1">FK</text>
+<text x="340" y="1068" text-anchor="end" font-family="Arial, sans-serif" font-size="10" fill="#829AB1">→ customer</text>
+<text x="52" y="1095" font-family="Arial, sans-serif" font-size="11" fill="#52606D">TEXT</text>
+<text x="126" y="1095" font-family="Arial, sans-serif" font-size="11.5" fill="#102A43">order_status</text>
+<text x="340" y="1095" text-anchor="end" font-family="Arial, sans-serif" font-size="10" fill="#829AB1">订单状态</text>
+<rect x="41" y="1104" width="308" height="27" fill="#F8FAFC"/>
+<text x="52" y="1122" font-family="Arial, sans-serif" font-size="11" fill="#52606D">TEXT</text>
+<text x="126" y="1122" font-family="Arial, sans-serif" font-size="11.5" fill="#102A43">downstream_order_no</text>
+<text x="340" y="1122" text-anchor="end" font-family="Arial, sans-serif" font-size="10" fill="#829AB1">下游履约单号</text>
+<text x="52" y="1149" font-family="Arial, sans-serif" font-size="11" fill="#52606D">INTEGER</text>
+<text x="126" y="1149" font-family="Arial, sans-serif" font-size="11.5" fill="#102A43">batch_id</text>
+<text x="265" y="1149" font-family="Arial, sans-serif" font-size="10" font-weight="700" fill="#3B67B1">FK</text>
+<text x="340" y="1149" text-anchor="end" font-family="Arial, sans-serif" font-size="10" fill="#829AB1">→ raw_import_batch</text>
+</g>
+<g filter="url(#shadow)"><rect x="890" y="900" width="310" height="243" rx="8" fill="#ffffff" stroke="#B16A13" stroke-width="1.5"/><rect x="890" y="900" width="310" height="42" rx="8" fill="#FFF4E6"/><rect x="890" y="934" width="310" height="8" fill="#FFF4E6"/>
+<text x="904" y="927" font-family="Arial, sans-serif" font-size="16" font-weight="700" fill="#B16A13">活动规则</text><text x="1186" y="926" text-anchor="end" font-family="Arial, sans-serif" font-size="11" fill="#829AB1">activity_rule</text>
+<rect x="891" y="942" width="308" height="27" fill="#F8FAFC"/>
+<text x="902" y="960" font-family="Arial, sans-serif" font-size="11" fill="#52606D">INTEGER</text>
+<text x="976" y="960" font-family="Arial, sans-serif" font-size="11.5" fill="#102A43">rule_id</text>
+<text x="1115" y="960" font-family="Arial, sans-serif" font-size="10" font-weight="700" fill="#B16A13">PK</text>
+<text x="1190" y="960" text-anchor="end" font-family="Arial, sans-serif" font-size="10" fill="#829AB1">内部主键</text>
+<text x="902" y="987" font-family="Arial, sans-serif" font-size="11" fill="#52606D">INTEGER</text>
+<text x="976" y="987" font-family="Arial, sans-serif" font-size="11.5" fill="#102A43">activity_id</text>
+<text x="1115" y="987" font-family="Arial, sans-serif" font-size="10" font-weight="700" fill="#B16A13">FK</text>
+<text x="1190" y="987" text-anchor="end" font-family="Arial, sans-serif" font-size="10" fill="#829AB1">→ activity</text>
+<rect x="891" y="996" width="308" height="27" fill="#F8FAFC"/>
+<text x="902" y="1014" font-family="Arial, sans-serif" font-size="11" fill="#52606D">INTEGER</text>
+<text x="976" y="1014" font-family="Arial, sans-serif" font-size="11.5" fill="#102A43">tier_no</text>
+<text x="1115" y="1014" font-family="Arial, sans-serif" font-size="10" font-weight="700" fill="#B16A13">UK</text>
+<text x="1190" y="1014" text-anchor="end" font-family="Arial, sans-serif" font-size="10" fill="#829AB1">阶梯序号</text>
+<text x="902" y="1041" font-family="Arial, sans-serif" font-size="11" fill="#52606D">TEXT</text>
+<text x="976" y="1041" font-family="Arial, sans-serif" font-size="11.5" fill="#102A43">threshold_type</text>
+<text x="1190" y="1041" text-anchor="end" font-family="Arial, sans-serif" font-size="10" fill="#829AB1">金额 / 数量</text>
+<rect x="891" y="1050" width="308" height="27" fill="#F8FAFC"/>
+<text x="902" y="1068" font-family="Arial, sans-serif" font-size="11" fill="#52606D">NUMERIC</text>
+<text x="976" y="1068" font-family="Arial, sans-serif" font-size="11.5" fill="#102A43">threshold_value</text>
+<text x="1190" y="1068" text-anchor="end" font-family="Arial, sans-serif" font-size="10" fill="#829AB1">门槛值</text>
+<text x="902" y="1095" font-family="Arial, sans-serif" font-size="11" fill="#52606D">NUMERIC</text>
+<text x="976" y="1095" font-family="Arial, sans-serif" font-size="11.5" fill="#102A43">reduce_amount</text>
+<text x="1190" y="1095" text-anchor="end" font-family="Arial, sans-serif" font-size="10" fill="#829AB1">立减金额</text>
+<rect x="891" y="1104" width="308" height="27" fill="#F8FAFC"/>
+<text x="902" y="1122" font-family="Arial, sans-serif" font-size="11" fill="#52606D">INTEGER</text>
+<text x="976" y="1122" font-family="Arial, sans-serif" font-size="11.5" fill="#102A43">free_shipping</text>
+<text x="1190" y="1122" text-anchor="end" font-family="Arial, sans-serif" font-size="10" fill="#829AB1">是否免邮</text>
+</g>
+<g filter="url(#shadow)"><rect x="1260" y="900" width="310" height="189" rx="8" fill="#ffffff" stroke="#B16A13" stroke-width="1.5"/><rect x="1260" y="900" width="310" height="42" rx="8" fill="#FFF4E6"/><rect x="1260" y="934" width="310" height="8" fill="#FFF4E6"/>
+<text x="1274" y="927" font-family="Arial, sans-serif" font-size="16" font-weight="700" fill="#B16A13">活动范围</text><text x="1556" y="926" text-anchor="end" font-family="Arial, sans-serif" font-size="11" fill="#829AB1">activity_scope</text>
+<rect x="1261" y="942" width="308" height="27" fill="#F8FAFC"/>
+<text x="1272" y="960" font-family="Arial, sans-serif" font-size="11" fill="#52606D">INTEGER</text>
+<text x="1346" y="960" font-family="Arial, sans-serif" font-size="11.5" fill="#102A43">scope_id</text>
+<text x="1485" y="960" font-family="Arial, sans-serif" font-size="10" font-weight="700" fill="#B16A13">PK</text>
+<text x="1560" y="960" text-anchor="end" font-family="Arial, sans-serif" font-size="10" fill="#829AB1">内部主键</text>
+<text x="1272" y="987" font-family="Arial, sans-serif" font-size="11" fill="#52606D">INTEGER</text>
+<text x="1346" y="987" font-family="Arial, sans-serif" font-size="11.5" fill="#102A43">activity_id</text>
+<text x="1485" y="987" font-family="Arial, sans-serif" font-size="10" font-weight="700" fill="#B16A13">FK</text>
+<text x="1560" y="987" text-anchor="end" font-family="Arial, sans-serif" font-size="10" fill="#829AB1">→ activity</text>
+<rect x="1261" y="996" width="308" height="27" fill="#F8FAFC"/>
+<text x="1272" y="1014" font-family="Arial, sans-serif" font-size="11" fill="#52606D">TEXT</text>
+<text x="1346" y="1014" font-family="Arial, sans-serif" font-size="11.5" fill="#102A43">scope_category</text>
+<text x="1560" y="1014" text-anchor="end" font-family="Arial, sans-serif" font-size="10" fill="#829AB1">商品 / 客户</text>
+<text x="1272" y="1041" font-family="Arial, sans-serif" font-size="11" fill="#52606D">TEXT</text>
+<text x="1346" y="1041" font-family="Arial, sans-serif" font-size="11.5" fill="#102A43">scope_dimension</text>
+<text x="1560" y="1041" text-anchor="end" font-family="Arial, sans-serif" font-size="10" fill="#829AB1">品牌 / 商品 / 区域</text>
+<rect x="1261" y="1050" width="308" height="27" fill="#F8FAFC"/>
+<text x="1272" y="1068" font-family="Arial, sans-serif" font-size="11" fill="#52606D">TEXT</text>
+<text x="1346" y="1068" font-family="Arial, sans-serif" font-size="11.5" fill="#102A43">scope_value</text>
+<text x="1560" y="1068" text-anchor="end" font-family="Arial, sans-serif" font-size="10" fill="#829AB1">范围取值</text>
+</g>
+<g filter="url(#shadow)"><rect x="1630" y="900" width="310" height="243" rx="8" fill="#ffffff" stroke="#B16A13" stroke-width="1.5"/><rect x="1630" y="900" width="310" height="42" rx="8" fill="#FFF4E6"/><rect x="1630" y="934" width="310" height="8" fill="#FFF4E6"/>
+<text x="1644" y="927" font-family="Arial, sans-serif" font-size="16" font-weight="700" fill="#B16A13">规则权益</text><text x="1926" y="926" text-anchor="end" font-family="Arial, sans-serif" font-size="11" fill="#829AB1">activity_rule_benefit</text>
+<rect x="1631" y="942" width="308" height="27" fill="#F8FAFC"/>
+<text x="1642" y="960" font-family="Arial, sans-serif" font-size="11" fill="#52606D">INTEGER</text>
+<text x="1716" y="960" font-family="Arial, sans-serif" font-size="11.5" fill="#102A43">benefit_id</text>
+<text x="1855" y="960" font-family="Arial, sans-serif" font-size="10" font-weight="700" fill="#B16A13">PK</text>
+<text x="1930" y="960" text-anchor="end" font-family="Arial, sans-serif" font-size="10" fill="#829AB1">内部主键</text>
+<text x="1642" y="987" font-family="Arial, sans-serif" font-size="11" fill="#52606D">INTEGER</text>
+<text x="1716" y="987" font-family="Arial, sans-serif" font-size="11.5" fill="#102A43">rule_id</text>
+<text x="1855" y="987" font-family="Arial, sans-serif" font-size="10" font-weight="700" fill="#B16A13">FK</text>
+<text x="1930" y="987" text-anchor="end" font-family="Arial, sans-serif" font-size="10" fill="#829AB1">→ activity_rule</text>
+<rect x="1631" y="996" width="308" height="27" fill="#F8FAFC"/>
+<text x="1642" y="1014" font-family="Arial, sans-serif" font-size="11" fill="#52606D">TEXT</text>
+<text x="1716" y="1014" font-family="Arial, sans-serif" font-size="11.5" fill="#102A43">benefit_type</text>
+<text x="1930" y="1014" text-anchor="end" font-family="Arial, sans-serif" font-size="10" fill="#829AB1">立减 / 赠品 / 送券</text>
+<text x="1642" y="1041" font-family="Arial, sans-serif" font-size="11" fill="#52606D">TEXT</text>
+<text x="1716" y="1041" font-family="Arial, sans-serif" font-size="11.5" fill="#102A43">gift_product_no</text>
+<text x="1930" y="1041" text-anchor="end" font-family="Arial, sans-serif" font-size="10" fill="#829AB1">赠品编号</text>
+<rect x="1631" y="1050" width="308" height="27" fill="#F8FAFC"/>
+<text x="1642" y="1068" font-family="Arial, sans-serif" font-size="11" fill="#52606D">TEXT</text>
+<text x="1716" y="1068" font-family="Arial, sans-serif" font-size="11.5" fill="#102A43">gift_product_name</text>
+<text x="1930" y="1068" text-anchor="end" font-family="Arial, sans-serif" font-size="10" fill="#829AB1">赠品名称</text>
+<text x="1642" y="1095" font-family="Arial, sans-serif" font-size="11" fill="#52606D">NUMERIC</text>
+<text x="1716" y="1095" font-family="Arial, sans-serif" font-size="11.5" fill="#102A43">gift_qty</text>
+<text x="1930" y="1095" text-anchor="end" font-family="Arial, sans-serif" font-size="10" fill="#829AB1">赠品数量</text>
+<rect x="1631" y="1104" width="308" height="27" fill="#F8FAFC"/>
+<text x="1642" y="1122" font-family="Arial, sans-serif" font-size="11" fill="#52606D">TEXT</text>
+<text x="1716" y="1122" font-family="Arial, sans-serif" font-size="11.5" fill="#102A43">coupon_id / coupon_name</text>
+<text x="1930" y="1122" text-anchor="end" font-family="Arial, sans-serif" font-size="10" fill="#829AB1">优惠券信息</text>
+</g>
+<g filter="url(#shadow)"><rect x="40" y="1430" width="310" height="270" rx="8" fill="#ffffff" stroke="#3B67B1" stroke-width="1.5"/><rect x="40" y="1430" width="310" height="42" rx="8" fill="#EEF4FF"/><rect x="40" y="1464" width="310" height="8" fill="#EEF4FF"/>
+<text x="54" y="1457" font-family="Arial, sans-serif" font-size="16" font-weight="700" fill="#3B67B1">订单明细</text><text x="336" y="1456" text-anchor="end" font-family="Arial, sans-serif" font-size="11" fill="#829AB1">order_line</text>
+<rect x="41" y="1472" width="308" height="27" fill="#F8FAFC"/>
+<text x="52" y="1490" font-family="Arial, sans-serif" font-size="11" fill="#52606D">INTEGER</text>
+<text x="126" y="1490" font-family="Arial, sans-serif" font-size="11.5" fill="#102A43">order_line_id</text>
+<text x="265" y="1490" font-family="Arial, sans-serif" font-size="10" font-weight="700" fill="#3B67B1">PK</text>
+<text x="340" y="1490" text-anchor="end" font-family="Arial, sans-serif" font-size="10" fill="#829AB1">内部主键</text>
+<text x="52" y="1517" font-family="Arial, sans-serif" font-size="11" fill="#52606D">INTEGER</text>
+<text x="126" y="1517" font-family="Arial, sans-serif" font-size="11.5" fill="#102A43">order_id</text>
+<text x="265" y="1517" font-family="Arial, sans-serif" font-size="10" font-weight="700" fill="#3B67B1">FK</text>
+<text x="340" y="1517" text-anchor="end" font-family="Arial, sans-serif" font-size="10" fill="#829AB1">→ order_header</text>
+<rect x="41" y="1526" width="308" height="27" fill="#F8FAFC"/>
+<text x="52" y="1544" font-family="Arial, sans-serif" font-size="11" fill="#52606D">INTEGER</text>
+<text x="126" y="1544" font-family="Arial, sans-serif" font-size="11.5" fill="#102A43">product_id</text>
+<text x="265" y="1544" font-family="Arial, sans-serif" font-size="10" font-weight="700" fill="#3B67B1">FK</text>
+<text x="340" y="1544" text-anchor="end" font-family="Arial, sans-serif" font-size="10" fill="#829AB1">→ product</text>
+<text x="52" y="1571" font-family="Arial, sans-serif" font-size="11" fill="#52606D">NUMERIC / TEXT</text>
+<text x="126" y="1571" font-family="Arial, sans-serif" font-size="11.5" fill="#102A43">order_qty / order_unit</text>
+<text x="340" y="1571" text-anchor="end" font-family="Arial, sans-serif" font-size="10" fill="#829AB1">订货数量 / 单位</text>
+<rect x="41" y="1580" width="308" height="27" fill="#F8FAFC"/>
+<text x="52" y="1598" font-family="Arial, sans-serif" font-size="11" fill="#52606D">NUMERIC / TEXT</text>
+<text x="126" y="1598" font-family="Arial, sans-serif" font-size="11.5" fill="#102A43">base_qty / base_unit</text>
+<text x="340" y="1598" text-anchor="end" font-family="Arial, sans-serif" font-size="10" fill="#829AB1">基准数量 / 单位</text>
+<text x="52" y="1625" font-family="Arial, sans-serif" font-size="11" fill="#52606D">NUMERIC</text>
+<text x="126" y="1625" font-family="Arial, sans-serif" font-size="11.5" fill="#102A43">pre_discount_amount</text>
+<text x="340" y="1625" text-anchor="end" font-family="Arial, sans-serif" font-size="10" fill="#829AB1">折前金额</text>
+<rect x="41" y="1634" width="308" height="27" fill="#F8FAFC"/>
+<text x="52" y="1652" font-family="Arial, sans-serif" font-size="11" fill="#52606D">NUMERIC</text>
+<text x="126" y="1652" font-family="Arial, sans-serif" font-size="11.5" fill="#102A43">discount_amount</text>
+<text x="340" y="1652" text-anchor="end" font-family="Arial, sans-serif" font-size="10" fill="#829AB1">优惠金额</text>
+<text x="52" y="1679" font-family="Arial, sans-serif" font-size="11" fill="#52606D">NUMERIC</text>
+<text x="126" y="1679" font-family="Arial, sans-serif" font-size="11.5" fill="#102A43">unit_price</text>
+<text x="340" y="1679" text-anchor="end" font-family="Arial, sans-serif" font-size="10" fill="#829AB1">单价</text>
+</g>
+<g filter="url(#shadow)"><rect x="430" y="1430" width="310" height="297" rx="8" fill="#ffffff" stroke="#B16A13" stroke-width="1.5"/><rect x="430" y="1430" width="310" height="42" rx="8" fill="#FFF4E6"/><rect x="430" y="1464" width="310" height="8" fill="#FFF4E6"/>
+<text x="444" y="1457" font-family="Arial, sans-serif" font-size="16" font-weight="700" fill="#B16A13">订单活动关系</text><text x="726" y="1456" text-anchor="end" font-family="Arial, sans-serif" font-size="11" fill="#829AB1">order_activity</text>
+<rect x="431" y="1472" width="308" height="27" fill="#F8FAFC"/>
+<text x="442" y="1490" font-family="Arial, sans-serif" font-size="11" fill="#52606D">INTEGER</text>
+<text x="516" y="1490" font-family="Arial, sans-serif" font-size="11.5" fill="#102A43">order_activity_id</text>
+<text x="655" y="1490" font-family="Arial, sans-serif" font-size="10" font-weight="700" fill="#B16A13">PK</text>
+<text x="730" y="1490" text-anchor="end" font-family="Arial, sans-serif" font-size="10" fill="#829AB1">内部主键</text>
+<text x="442" y="1517" font-family="Arial, sans-serif" font-size="11" fill="#52606D">INTEGER</text>
+<text x="516" y="1517" font-family="Arial, sans-serif" font-size="11.5" fill="#102A43">order_id</text>
+<text x="655" y="1517" font-family="Arial, sans-serif" font-size="10" font-weight="700" fill="#B16A13">FK</text>
+<text x="730" y="1517" text-anchor="end" font-family="Arial, sans-serif" font-size="10" fill="#829AB1">→ order_header</text>
+<rect x="431" y="1526" width="308" height="27" fill="#F8FAFC"/>
+<text x="442" y="1544" font-family="Arial, sans-serif" font-size="11" fill="#52606D">INTEGER</text>
+<text x="516" y="1544" font-family="Arial, sans-serif" font-size="11.5" fill="#102A43">activity_id</text>
+<text x="655" y="1544" font-family="Arial, sans-serif" font-size="10" font-weight="700" fill="#B16A13">FK</text>
+<text x="730" y="1544" text-anchor="end" font-family="Arial, sans-serif" font-size="10" fill="#829AB1">→ activity</text>
+<text x="442" y="1571" font-family="Arial, sans-serif" font-size="11" fill="#52606D">INTEGER</text>
+<text x="516" y="1571" font-family="Arial, sans-serif" font-size="11.5" fill="#102A43">rule_id</text>
+<text x="655" y="1571" font-family="Arial, sans-serif" font-size="10" font-weight="700" fill="#B16A13">FK</text>
+<text x="730" y="1571" text-anchor="end" font-family="Arial, sans-serif" font-size="10" fill="#829AB1">→ activity_rule</text>
+<rect x="431" y="1580" width="308" height="27" fill="#F8FAFC"/>
+<text x="442" y="1598" font-family="Arial, sans-serif" font-size="11" fill="#52606D">NUMERIC</text>
+<text x="516" y="1598" font-family="Arial, sans-serif" font-size="11.5" fill="#102A43">activity_product_amount</text>
+<text x="730" y="1598" text-anchor="end" font-family="Arial, sans-serif" font-size="10" fill="#829AB1">命中商品金额</text>
+<text x="442" y="1625" font-family="Arial, sans-serif" font-size="11" fill="#52606D">NUMERIC</text>
+<text x="516" y="1625" font-family="Arial, sans-serif" font-size="11.5" fill="#102A43">platform_actual_benefit</text>
+<text x="730" y="1625" text-anchor="end" font-family="Arial, sans-serif" font-size="10" fill="#829AB1">平台实际权益</text>
+<rect x="431" y="1634" width="308" height="27" fill="#F8FAFC"/>
+<text x="442" y="1652" font-family="Arial, sans-serif" font-size="11" fill="#52606D">NUMERIC</text>
+<text x="516" y="1652" font-family="Arial, sans-serif" font-size="11.5" fill="#102A43">gift_qty_actual</text>
+<text x="730" y="1652" text-anchor="end" font-family="Arial, sans-serif" font-size="10" fill="#829AB1">实际赠品数</text>
+<text x="442" y="1679" font-family="Arial, sans-serif" font-size="11" fill="#52606D">TEXT</text>
+<text x="516" y="1679" font-family="Arial, sans-serif" font-size="11.5" fill="#102A43">exec_status</text>
+<text x="730" y="1679" text-anchor="end" font-family="Arial, sans-serif" font-size="10" fill="#829AB1">执行状态</text>
+<rect x="431" y="1688" width="308" height="27" fill="#F8FAFC"/>
+<text x="442" y="1706" font-family="Arial, sans-serif" font-size="11" fill="#52606D">TEXT</text>
+<text x="516" y="1706" font-family="Arial, sans-serif" font-size="11.5" fill="#102A43">evidence_ref</text>
+<text x="730" y="1706" text-anchor="end" font-family="Arial, sans-serif" font-size="10" fill="#829AB1">证据引用</text>
+</g>
+<g filter="url(#shadow)"><rect x="850" y="1430" width="310" height="243" rx="8" fill="#ffffff" stroke="#3B67B1" stroke-width="1.5"/><rect x="850" y="1430" width="310" height="42" rx="8" fill="#EEF4FF"/><rect x="850" y="1464" width="310" height="8" fill="#EEF4FF"/>
+<text x="864" y="1457" font-family="Arial, sans-serif" font-size="16" font-weight="700" fill="#3B67B1">履约</text><text x="1146" y="1456" text-anchor="end" font-family="Arial, sans-serif" font-size="11" fill="#829AB1">fulfillment</text>
+<rect x="851" y="1472" width="308" height="27" fill="#F8FAFC"/>
+<text x="862" y="1490" font-family="Arial, sans-serif" font-size="11" fill="#52606D">INTEGER</text>
+<text x="936" y="1490" font-family="Arial, sans-serif" font-size="11.5" fill="#102A43">fulfillment_id</text>
+<text x="1075" y="1490" font-family="Arial, sans-serif" font-size="10" font-weight="700" fill="#3B67B1">PK</text>
+<text x="1150" y="1490" text-anchor="end" font-family="Arial, sans-serif" font-size="10" fill="#829AB1">内部主键</text>
+<text x="862" y="1517" font-family="Arial, sans-serif" font-size="11" fill="#52606D">INTEGER</text>
+<text x="936" y="1517" font-family="Arial, sans-serif" font-size="11.5" fill="#102A43">order_id</text>
+<text x="1075" y="1517" font-family="Arial, sans-serif" font-size="10" font-weight="700" fill="#3B67B1">FK,UK</text>
+<text x="1150" y="1517" text-anchor="end" font-family="Arial, sans-serif" font-size="10" fill="#829AB1">→ order_header</text>
+<rect x="851" y="1526" width="308" height="27" fill="#F8FAFC"/>
+<text x="862" y="1544" font-family="Arial, sans-serif" font-size="11" fill="#52606D">TEXT</text>
+<text x="936" y="1544" font-family="Arial, sans-serif" font-size="11.5" fill="#102A43">order_status</text>
+<text x="1150" y="1544" text-anchor="end" font-family="Arial, sans-serif" font-size="10" fill="#829AB1">履约状态</text>
+<text x="862" y="1571" font-family="Arial, sans-serif" font-size="11" fill="#52606D">TEXT</text>
+<text x="936" y="1571" font-family="Arial, sans-serif" font-size="11.5" fill="#102A43">completed_at</text>
+<text x="1150" y="1571" text-anchor="end" font-family="Arial, sans-serif" font-size="10" fill="#829AB1">完成时间</text>
+<rect x="851" y="1580" width="308" height="27" fill="#F8FAFC"/>
+<text x="862" y="1598" font-family="Arial, sans-serif" font-size="11" fill="#52606D">INTEGER</text>
+<text x="936" y="1598" font-family="Arial, sans-serif" font-size="11.5" fill="#102A43">t2_release_candidate</text>
+<text x="1150" y="1598" text-anchor="end" font-family="Arial, sans-serif" font-size="10" fill="#829AB1">T-2 释放候选</text>
+<text x="862" y="1625" font-family="Arial, sans-serif" font-size="11" fill="#52606D">NUMERIC</text>
+<text x="936" y="1625" font-family="Arial, sans-serif" font-size="11.5" fill="#102A43">return_qty</text>
+<text x="1150" y="1625" text-anchor="end" font-family="Arial, sans-serif" font-size="10" fill="#829AB1">退货数量</text>
+<rect x="851" y="1634" width="308" height="27" fill="#F8FAFC"/>
+<text x="862" y="1652" font-family="Arial, sans-serif" font-size="11" fill="#52606D">TEXT</text>
+<text x="936" y="1652" font-family="Arial, sans-serif" font-size="11.5" fill="#102A43">special_reason</text>
+<text x="1150" y="1652" text-anchor="end" font-family="Arial, sans-serif" font-size="10" fill="#829AB1">例外原因</text>
+</g>
+<g filter="url(#shadow)"><rect x="1220" y="1430" width="310" height="297" rx="8" fill="#ffffff" stroke="#B16A13" stroke-width="1.5"/><rect x="1220" y="1430" width="310" height="42" rx="8" fill="#FFF4E6"/><rect x="1220" y="1464" width="310" height="8" fill="#FFF4E6"/>
+<text x="1234" y="1457" font-family="Arial, sans-serif" font-size="16" font-weight="700" fill="#B16A13">优惠券台账</text><text x="1516" y="1456" text-anchor="end" font-family="Arial, sans-serif" font-size="11" fill="#829AB1">coupon_ledger</text>
+<rect x="1221" y="1472" width="308" height="27" fill="#F8FAFC"/>
+<text x="1232" y="1490" font-family="Arial, sans-serif" font-size="11" fill="#52606D">INTEGER</text>
+<text x="1306" y="1490" font-family="Arial, sans-serif" font-size="11.5" fill="#102A43">coupon_id</text>
+<text x="1445" y="1490" font-family="Arial, sans-serif" font-size="10" font-weight="700" fill="#B16A13">PK</text>
+<text x="1520" y="1490" text-anchor="end" font-family="Arial, sans-serif" font-size="10" fill="#829AB1">内部主键</text>
+<text x="1232" y="1517" font-family="Arial, sans-serif" font-size="11" fill="#52606D">INTEGER</text>
+<text x="1306" y="1517" font-family="Arial, sans-serif" font-size="11.5" fill="#102A43">dealer_platform_id</text>
+<text x="1445" y="1517" font-family="Arial, sans-serif" font-size="10" font-weight="700" fill="#B16A13">FK</text>
+<text x="1520" y="1517" text-anchor="end" font-family="Arial, sans-serif" font-size="10" fill="#829AB1">→ dealer_platform</text>
+<rect x="1221" y="1526" width="308" height="27" fill="#F8FAFC"/>
+<text x="1232" y="1544" font-family="Arial, sans-serif" font-size="11" fill="#52606D">TEXT</text>
+<text x="1306" y="1544" font-family="Arial, sans-serif" font-size="11.5" fill="#102A43">coupon_no</text>
+<text x="1445" y="1544" font-family="Arial, sans-serif" font-size="10" font-weight="700" fill="#B16A13">UK</text>
+<text x="1520" y="1544" text-anchor="end" font-family="Arial, sans-serif" font-size="10" fill="#829AB1">券号（字符串）</text>
+<text x="1232" y="1571" font-family="Arial, sans-serif" font-size="11" fill="#52606D">TEXT</text>
+<text x="1306" y="1571" font-family="Arial, sans-serif" font-size="11.5" fill="#102A43">coupon_name</text>
+<text x="1520" y="1571" text-anchor="end" font-family="Arial, sans-serif" font-size="10" fill="#829AB1">券名称</text>
+<rect x="1221" y="1580" width="308" height="27" fill="#F8FAFC"/>
+<text x="1232" y="1598" font-family="Arial, sans-serif" font-size="11" fill="#52606D">INTEGER</text>
+<text x="1306" y="1598" font-family="Arial, sans-serif" font-size="11.5" fill="#102A43">customer_id</text>
+<text x="1445" y="1598" font-family="Arial, sans-serif" font-size="10" font-weight="700" fill="#B16A13">FK</text>
+<text x="1520" y="1598" text-anchor="end" font-family="Arial, sans-serif" font-size="10" fill="#829AB1">→ customer</text>
+<text x="1232" y="1625" font-family="Arial, sans-serif" font-size="11" fill="#52606D">TEXT</text>
+<text x="1306" y="1625" font-family="Arial, sans-serif" font-size="11.5" fill="#102A43">use_order_no</text>
+<text x="1520" y="1625" text-anchor="end" font-family="Arial, sans-serif" font-size="10" fill="#829AB1">使用订单号</text>
+<rect x="1221" y="1634" width="308" height="27" fill="#F8FAFC"/>
+<text x="1232" y="1652" font-family="Arial, sans-serif" font-size="11" fill="#52606D">TEXT</text>
+<text x="1306" y="1652" font-family="Arial, sans-serif" font-size="11.5" fill="#102A43">coupon_status</text>
+<text x="1520" y="1652" text-anchor="end" font-family="Arial, sans-serif" font-size="10" fill="#829AB1">券状态</text>
+<text x="1232" y="1679" font-family="Arial, sans-serif" font-size="11" fill="#52606D">NUMERIC</text>
+<text x="1306" y="1679" font-family="Arial, sans-serif" font-size="11.5" fill="#102A43">discount_amount</text>
+<text x="1520" y="1679" text-anchor="end" font-family="Arial, sans-serif" font-size="10" fill="#829AB1">优惠金额</text>
+<rect x="1221" y="1688" width="308" height="27" fill="#F8FAFC"/>
+<text x="1232" y="1706" font-family="Arial, sans-serif" font-size="11" fill="#52606D">TEXT</text>
+<text x="1306" y="1706" font-family="Arial, sans-serif" font-size="11.5" fill="#102A43">fee_month</text>
+<text x="1520" y="1706" text-anchor="end" font-family="Arial, sans-serif" font-size="10" fill="#829AB1">费用月份</text>
+</g>
+<g filter="url(#shadow)"><rect x="1590" y="1430" width="310" height="270" rx="8" fill="#ffffff" stroke="#7851A9" stroke-width="1.5"/><rect x="1590" y="1430" width="310" height="42" rx="8" fill="#F4EEFF"/><rect x="1590" y="1464" width="310" height="8" fill="#F4EEFF"/>
+<text x="1604" y="1457" font-family="Arial, sans-serif" font-size="16" font-weight="700" fill="#7851A9">跨系统映射</text><text x="1886" y="1456" text-anchor="end" font-family="Arial, sans-serif" font-size="11" fill="#829AB1">cross_mapping</text>
+<rect x="1591" y="1472" width="308" height="27" fill="#F8FAFC"/>
+<text x="1602" y="1490" font-family="Arial, sans-serif" font-size="11" fill="#52606D">INTEGER</text>
+<text x="1676" y="1490" font-family="Arial, sans-serif" font-size="11.5" fill="#102A43">mapping_id</text>
+<text x="1815" y="1490" font-family="Arial, sans-serif" font-size="10" font-weight="700" fill="#7851A9">PK</text>
+<text x="1890" y="1490" text-anchor="end" font-family="Arial, sans-serif" font-size="10" fill="#829AB1">内部主键</text>
+<text x="1602" y="1517" font-family="Arial, sans-serif" font-size="11" fill="#52606D">INTEGER</text>
+<text x="1676" y="1517" font-family="Arial, sans-serif" font-size="11.5" fill="#102A43">dealer_platform_id</text>
+<text x="1815" y="1517" font-family="Arial, sans-serif" font-size="10" font-weight="700" fill="#7851A9">FK</text>
+<text x="1890" y="1517" text-anchor="end" font-family="Arial, sans-serif" font-size="10" fill="#829AB1">→ dealer_platform</text>
+<rect x="1591" y="1526" width="308" height="27" fill="#F8FAFC"/>
+<text x="1602" y="1544" font-family="Arial, sans-serif" font-size="11" fill="#52606D">TEXT</text>
+<text x="1676" y="1544" font-family="Arial, sans-serif" font-size="11.5" fill="#102A43">mapping_object_type</text>
+<text x="1890" y="1544" text-anchor="end" font-family="Arial, sans-serif" font-size="10" fill="#829AB1">客户 / 商品</text>
+<text x="1602" y="1571" font-family="Arial, sans-serif" font-size="11" fill="#52606D">TEXT</text>
+<text x="1676" y="1571" font-family="Arial, sans-serif" font-size="11.5" fill="#102A43">ec101_key</text>
+<text x="1815" y="1571" font-family="Arial, sans-serif" font-size="10" font-weight="700" fill="#7851A9">UK</text>
+<text x="1890" y="1571" text-anchor="end" font-family="Arial, sans-serif" font-size="10" fill="#829AB1">EC101 主键</text>
+<rect x="1591" y="1580" width="308" height="27" fill="#F8FAFC"/>
+<text x="1602" y="1598" font-family="Arial, sans-serif" font-size="11" fill="#52606D">TEXT</text>
+<text x="1676" y="1598" font-family="Arial, sans-serif" font-size="11.5" fill="#102A43">swire_key</text>
+<text x="1890" y="1598" text-anchor="end" font-family="Arial, sans-serif" font-size="10" fill="#829AB1">太古侧编号</text>
+<text x="1602" y="1625" font-family="Arial, sans-serif" font-size="11" fill="#52606D">TEXT</text>
+<text x="1676" y="1625" font-family="Arial, sans-serif" font-size="11.5" fill="#102A43">match_status</text>
+<text x="1890" y="1625" text-anchor="end" font-family="Arial, sans-serif" font-size="10" fill="#829AB1">匹配状态</text>
+<rect x="1591" y="1634" width="308" height="27" fill="#F8FAFC"/>
+<text x="1602" y="1652" font-family="Arial, sans-serif" font-size="11" fill="#52606D">NUMERIC</text>
+<text x="1676" y="1652" font-family="Arial, sans-serif" font-size="11.5" fill="#102A43">fuzzy_score</text>
+<text x="1890" y="1652" text-anchor="end" font-family="Arial, sans-serif" font-size="10" fill="#829AB1">模糊匹配分</text>
+<text x="1602" y="1679" font-family="Arial, sans-serif" font-size="11" fill="#52606D">INTEGER</text>
+<text x="1676" y="1679" font-family="Arial, sans-serif" font-size="11.5" fill="#102A43">manual_corrected</text>
+<text x="1890" y="1679" text-anchor="end" font-family="Arial, sans-serif" font-size="10" fill="#829AB1">人工修正</text>
+</g>
+<g transform="translate(60,1910)"><rect width="420" height="34" rx="8" fill="#F8FAFC" stroke="#D9E2EC"/><circle cx="18" cy="17" r="6" fill="#167E6D"/><text x="32" y="21" font-family="Arial, sans-serif" font-size="11" fill="#52606D">主数据</text><circle cx="110" cy="17" r="6" fill="#3B67B1"/><text x="124" y="21" font-family="Arial, sans-serif" font-size="11" fill="#52606D">订单履约</text><circle cx="220" cy="17" r="6" fill="#B16A13"/><text x="234" y="21" font-family="Arial, sans-serif" font-size="11" fill="#52606D">活动权益</text><circle cx="340" cy="17" r="6" fill="#7851A9"/><text x="354" y="21" font-family="Arial, sans-serif" font-size="11" fill="#52606D">跨系统映射</text></g></svg>
