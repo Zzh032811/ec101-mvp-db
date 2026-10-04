@@ -162,8 +162,11 @@ CREATE TABLE activity (
   min_sku_count NUMERIC,
   activity_status TEXT,
   rule_version  TEXT,
-  UNIQUE(dealer_platform_id, activity_name)
+  activity_import_key TEXT
 );
+CREATE UNIQUE INDEX uq_activity_import_key
+  ON activity(activity_import_key)
+  WHERE activity_import_key IS NOT NULL;
 
 CREATE TABLE activity_rule (
   rule_id       INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -240,6 +243,7 @@ CREATE TABLE cross_mapping (
 CREATE TABLE coupon_ledger (
   coupon_id     INTEGER PRIMARY KEY AUTOINCREMENT,
   dealer_platform_id INTEGER NOT NULL REFERENCES dealer_platform(dealer_platform_id),
+  activity_id   INTEGER REFERENCES activity(activity_id),
   coupon_no     TEXT NOT NULL,          -- 字符串
   coupon_name   TEXT,
   customer_id   INTEGER REFERENCES customer(customer_id),
@@ -254,6 +258,32 @@ CREATE TABLE coupon_ledger (
   UNIQUE(dealer_platform_id, coupon_no)
 );
 CREATE INDEX idx_coupon_useorder ON coupon_ledger(use_order_no);
+CREATE INDEX idx_coupon_activity ON coupon_ledger(activity_id);
+
+CREATE TABLE coupon_issue_rule (
+  coupon_issue_rule_id INTEGER PRIMARY KEY AUTOINCREMENT,
+  activity_id          INTEGER NOT NULL UNIQUE REFERENCES activity(activity_id),
+  issue_mode           TEXT NOT NULL CHECK(issue_mode IN ('auto_grant', 'manual_claim')),
+  issue_start_at       TEXT NOT NULL,
+  issue_end_at         TEXT,
+  auto_issue_at        TEXT,
+  coupon_qty_per_grant NUMERIC NOT NULL,
+  max_claim_per_customer NUMERIC,
+  daily_claim_limit    NUMERIC,
+  rule_status          TEXT NOT NULL
+);
+
+CREATE TABLE coupon_use_rule (
+  coupon_use_rule_id       INTEGER PRIMARY KEY AUTOINCREMENT,
+  activity_id              INTEGER NOT NULL UNIQUE REFERENCES activity(activity_id),
+  coupon_type              TEXT NOT NULL,
+  validity_mode            TEXT NOT NULL CHECK(validity_mode IN ('fixed_period', 'days_after_receive')),
+  use_start_at             TEXT,
+  use_end_at               TEXT,
+  valid_days_after_receive INTEGER,
+  max_use_per_coupon       NUMERIC NOT NULL,
+  rule_status              TEXT NOT NULL
+);
 
 -- ========== RESULT ==========
 CREATE TABLE rule_catalog (

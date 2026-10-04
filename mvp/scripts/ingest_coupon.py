@@ -11,15 +11,16 @@ import os, sys, sqlite3
 from datetime import datetime
 sys.path.insert(0, os.path.dirname(__file__))
 from readers import read_table, to_num, to_datetime_text
+from migrate_coupon_core import load_coupon_activities, migrate_schema
 
 MVP   = r"D:\Peggy zhan\智能EC101\数据底座\第三阶段数据库设计\mvp"
 BASE  = r"D:\Peggy zhan\智能EC101\数据底座\第三阶段数据库设计\快马-兴路强-试点"
 DB    = os.path.join(MVP, "ec101_mvp.db")
 REPORT= os.path.join(MVP, "ingest_report_coupon.txt")
 
-F_ACT   = os.path.join(BASE, "优惠券", "快马-兴路强-优惠券-定向优惠券-活动明细-20260909-20260912.xls")
-F_ORDER = os.path.join(BASE, "优惠券", "快马-兴路强-优惠券-定向优惠券-订单明细-20260909-20260912.xls")
-F_SALES = os.path.join(BASE, "优惠券", "快马-兴路强-优惠券-定向优惠券-销售明细-20260909-20260912.xlsx")
+F_ACT   = os.path.join(BASE, "优惠券", "快马-兴路强-优惠券-test1优惠券-活动明细-20260909-20260912.xls")
+F_ORDER = os.path.join(BASE, "优惠券", "快马-兴路强-优惠券-test1优惠券-订单明细-20260909-20260912.xls")
+F_SALES = os.path.join(BASE, "优惠券", "快马-兴路强-优惠券-test1优惠券-销售明细-20260909-20260912.xlsx")
 
 BATCH_CODE = "KM-XLQ-YHQ-20260909-20260912"
 DEALER     = "深圳市兴路强商贸有限公司"
@@ -35,6 +36,7 @@ def cell(row, idx, default=""):
     v = row[idx]; return v if v is not None else default
 
 con = sqlite3.connect(DB); con.execute("PRAGMA foreign_keys = ON"); cur = con.cursor()
+migrate_schema(con)
 
 # 1. 幂等清理(券类作用域): coupon_ledger 按 dealer; raw 批次按 batch_code
 cur.execute("SELECT dealer_platform_id FROM dealer_platform WHERE dealer_name=? AND platform_name=?", (DEALER, PLATFORM))
@@ -93,6 +95,8 @@ for r in ROWS_A:
     loaded += 1
     link_rows.append((cno, use_no))
 w("\n== 1. coupon_ledger == 载入=", loaded, " 客户未匹配=", len(cust_unmatched), cust_unmatched[:5])
+coupon_summary = load_coupon_activities(con, os.path.join(BASE, "优惠券"))
+w("  券活动配置:", coupon_summary)
 
 # 5. 关联验证: use_order_no -> order_header(精度修复端到端证据)
 linked = 0; unlinked = []

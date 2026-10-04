@@ -9,7 +9,8 @@
 - `mvp/ec101_mvp.db` 已包含快马×兴路强、舟谱×羿柏的真实导入数据和核算结果。
 - `api/server.py` 提供跨平台只读 HTTP API，直接查询 SQLite。
 - `ec101-fee-platform-v1` 的“业务数据”工作区通过 API 查询、筛选、查看详情和导出 CSV。
-- 已根据 SQLite DDL 生成 CORE 层实体关系图，覆盖 14 张 CORE 表及其 PK/FK/UK 和主要关系。
+- 优惠券已纳入 CORE 活动模型：两张券规则表记录发放和使用配置，券台账可在有审计证据时关联券活动。
+- 已根据 SQLite DDL 生成 CORE 层实体关系图，覆盖 16 张 CORE 表及其 PK/FK/UK 和主要关系。
 
 ## How to run
 
@@ -31,6 +32,7 @@ Windows 使用 `py api/server.py` 和 PowerShell 环境变量写法，详见 `ap
 - `api/server.py`：只读查询服务；后续线上化主要替换数据库连接和部署配置。
 - `ec101-fee-platform-v1/app/page.tsx`：费用运营台界面和 API 联调逻辑。
 - `mvp/ddl/ec101_mvp_sqlite.sql`：数据库结构的权威定义。
+- `mvp/scripts/migrate_coupon_core.py`：优惠券 CORE 结构迁移、券配置导入和本地数据库备份。
 - `docs/diagrams/ec101-mvp-core-er.svg`：CORE 层 ER 图，供业务和开发理解实体、字段与关系。
 - `scripts/build_core_er_svg.py`：ER 图生成脚本；DDL 关系变化后重新运行即可生成新版图。
 
