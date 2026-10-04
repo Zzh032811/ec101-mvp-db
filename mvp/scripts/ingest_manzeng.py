@@ -9,6 +9,7 @@ from collections import defaultdict, Counter
 from datetime import datetime
 sys.path.insert(0, os.path.dirname(__file__))
 from readers import read_table, to_num, to_datetime_text
+from promotion_calculator import calculate_activity
 
 MVP   = r"D:\Peggy zhan\智能EC101\数据底座\第三阶段数据库设计\mvp"
 BASE  = r"D:\Peggy zhan\智能EC101\数据底座\第三阶段数据库设计\快马-兴路强-试点"
@@ -278,6 +279,8 @@ for no, st, tm in not_completed:
 w("== 5d. quality_issue == 记录=", qi)
 
 con.commit()
+summary = calculate_activity(con, ACT, CB, CALC_DATE)
+w("== 5e. 通用核算框架 ==", summary)
 w("\n== 6. 汇总 ==")
 for t in ["order_header", "order_line", "activity", "order_activity", "result_entitlement", "result_release_candidate", "result_fee", "result_quality_issue"]:
     w(f"  {t}: {cur.execute('SELECT count(*) FROM ' + t).fetchone()[0]}")

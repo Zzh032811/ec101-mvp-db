@@ -42,6 +42,28 @@ GET /api/business-data/orders/1
 
 列表接口支持 `q`、`dealer`、`platform`、`limit`、`offset`；`limit` 最大为 100，`offset` 最大为 10000。
 
+## 费用与促销 TPM RESULT 接口
+
+以下接口同样只读，直接展示 RESULT 层的计算结论，不在 API 或页面中重算促销门槛、T-2 或结算金额：
+
+```text
+GET /api/fee-tpm/overview
+GET /api/fee-tpm/activities
+GET /api/fee-tpm/activities/{activity_id}
+GET /api/fee-tpm/issues
+GET /api/fee-tpm/settlements
+```
+
+所有列表支持 `dealer`、`platform`、`limit`、`offset`（上限仍为 100）及可选的 `calc_batch_id`。省略 `calc_batch_id` 时为“当前”模式：每个活动读取其自身最新的费用结果批次；传入时为历史回放，所有记录固定来自该批次。不存在的批次返回 `404`，不会回退到最新数据。
+
+例如：
+
+```bash
+curl 'http://127.0.0.1:8787/api/fee-tpm/activities?calc_batch_id=11'
+```
+
+响应中的 `tpm: null` 明确表示该活动不走 TPM；这不是预算为零。赠品的应赠/实赠始终以数量字段返回，未确认单价不会转换成金额或进入结算候选。`issues` 会保留无法唯一归属活动的批次级问题，其 `activityId` 为 `null`。
+
 ## 启动前端联调
 
 另开一个终端：

@@ -308,7 +308,7 @@ CREATE TABLE result_calc_batch (
 
 CREATE TABLE result_entitlement (
   entitlement_id INTEGER PRIMARY KEY AUTOINCREMENT,
-  order_activity_id INTEGER NOT NULL UNIQUE REFERENCES order_activity(order_activity_id),
+  order_activity_id INTEGER NOT NULL REFERENCES order_activity(order_activity_id),
   theoretical_benefit NUMERIC,
   platform_actual_benefit NUMERIC,
   gift_qty_entitled NUMERIC,            -- 应赠数(满赠类)
@@ -316,7 +316,8 @@ CREATE TABLE result_entitlement (
   consistency   TEXT,                   -- 一致/差异
   diff_amount   NUMERIC,
   formula_ref   TEXT,
-  calc_batch_id INTEGER REFERENCES result_calc_batch(calc_batch_id)
+  calc_batch_id INTEGER REFERENCES result_calc_batch(calc_batch_id),
+  UNIQUE(order_activity_id, calc_batch_id)
 );
 
 CREATE TABLE result_release_candidate (

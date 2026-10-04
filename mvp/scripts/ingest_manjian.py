@@ -9,6 +9,7 @@ from collections import defaultdict, Counter
 from datetime import datetime
 sys.path.insert(0, os.path.dirname(__file__))
 from readers import read_table, to_num, to_datetime_text
+from promotion_calculator import calculate_activity
 
 MVP   = r"D:\Peggy zhan\智能EC101\数据底座\第三阶段数据库设计\mvp"
 BASE  = r"D:\Peggy zhan\智能EC101\数据底座\第三阶段数据库设计\快马-兴路强-试点"
@@ -385,6 +386,11 @@ w("== 10d. result_quality_issue == 记录数=", qi,
   " (未达释放", len(not_completed), "/活动未匹配", len(act_unmatched), "/商品缺口", bool(prod_miss), "/客户缺口", bool(cust_miss), ")")
 
 con.commit()
+
+# The shared framework owns the persisted entitlement, T-2 and fee conclusions.
+# Keep the source-specific quality rows above as evidence for import gaps.
+summary = calculate_activity(con, ACT, CB, CALC_DATE)
+w("== 10e. 通用核算框架 ==", summary)
 
 # ============ 11. 汇总核对 ============
 w("\n== 11. 入库汇总 ==")

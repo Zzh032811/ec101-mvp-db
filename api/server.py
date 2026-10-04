@@ -15,6 +15,10 @@ ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_DB_PATH = ROOT / "mvp" / "ec101_mvp.db"
 
 
+class NotFoundError(KeyError):
+    """A requested, immutable calculation batch or activity does not exist."""
+
+
 def _config(select: str, joins: str, search: tuple[str, ...], id_column: str, order: str):
     return {"select": select, "joins": joins, "search": search, "id_column": id_column, "order": order}
 
@@ -133,6 +137,137 @@ def get_detail(db_path: Path, object_name: str, record_id: str) -> dict[str, Any
     return dict(row) if row else None
 
 
+def _fee_tpm_bounds(params: dict[str, Any]) -> tuple[int, int]:
+    return _bounds(params)
+
+
+def _requested_batch(connection: sqlite3.Connection, params: dict[str, Any]) -> int | None:
+    raw = params.get("calc_batch_id")
+    if raw in (None, ""):
+        return None
+    try:
+        batch_id = int(raw)
+    except (TypeError, ValueError) as exc:
+        raise ValueError("calc_batch_id must be an integer") from exc
+    if connection.execute("SELECT 1 FROM result_calc_batch WHERE calc_batch_id=?", (batch_id,)).fetchone() is None:
+        raise NotFoundError("calc_batch_id")
+    return batch_id
+
+
+def _fee_activity_rows(connection: sqlite3.Connection, params: dict[str, Any]) -> tuple[list[dict[str, Any]], int | None]:
+    batch_id = _requested_batch(connection, params)
+    dealer = str(params.get("dealer", "")).strip()
+    platform = str(params.get("platform", "")).strip()
+    clauses, values = [], []
+    if dealer:
+        clauses.append("dp.dealer_name LIKE ?"); values.append(f"%{dealer}%")
+    if platform:
+        clauses.append("dp.platform_name LIKE ?"); values.append(f"%{platform}%")
+    if batch_id is None:
+        batch_clause = "rf.calc_batch_id=(SELECT MAX(current_fee.calc_batch_id) FROM result_fee current_fee WHERE current_fee.activity_id=a.activity_id)"
+    else:
+        batch_clause = "rf.calc_batch_id=?"; values.append(batch_id)
+    where = " WHERE " + " AND ".join([batch_clause, *clauses])
+    sql = """
+        SELECT a.activity_id, a.activity_name, a.activity_category, a.promotion_type, a.rule_version,
+               dp.dealer_name, dp.platform_name, rf.tpm_id, rf.actual_discount_total, rf.gift_cost_total,
+               rf.settle_amount, rf.diff_amount, rf.settle_status, rf.calc_batch_id,
+               cb.calc_date, cb.rule_version AS calc_rule_version,
+               t.tpm_code, t.apply_amount, t.budget_reserve_no, t.fee_pay_dept,
+               COALESCE(SUM(re.gift_qty_entitled), 0) AS gift_qty_entitled,
+               COALESCE(SUM(re.gift_qty_actual), 0) AS gift_qty_actual,
+               COALESCE(SUM(CASE WHEN rc.is_candidate=1 THEN 1 ELSE 0 END), 0) AS release_candidates
+        FROM activity a
+        JOIN dealer_platform dp ON dp.dealer_platform_id=a.dealer_platform_id
+        JOIN result_fee rf ON rf.activity_id=a.activity_id
+        JOIN result_calc_batch cb ON cb.calc_batch_id=rf.calc_batch_id
+        LEFT JOIN tpm_application t ON t.tpm_id=rf.tpm_id
+        LEFT JOIN order_activity oa ON oa.activity_id=a.activity_id
+        LEFT JOIN result_entitlement re ON re.order_activity_id=oa.order_activity_id AND re.calc_batch_id=rf.calc_batch_id
+        LEFT JOIN result_release_candidate rc ON rc.order_id=oa.order_id AND rc.calc_batch_id=rf.calc_batch_id
+    """ + where + " GROUP BY a.activity_id,rf.calc_batch_id ORDER BY a.activity_id"
+    return [dict(row) for row in connection.execute(sql, values).fetchall()], batch_id
+
+
+def _issues_for_batches(connection: sqlite3.Connection, batch_ids: set[int]) -> list[dict[str, Any]]:
+    if not batch_ids:
+        return []
+    placeholders = ",".join("?" for _ in batch_ids)
+    issues = [dict(row) for row in connection.execute(f"SELECT * FROM result_quality_issue WHERE calc_batch_id IN ({placeholders}) ORDER BY issue_id", list(batch_ids)).fetchall()]
+    for issue in issues:
+        if not issue["order_no"]:
+            issue["activityId"] = None
+            continue
+        activity_ids = [row[0] for row in connection.execute("SELECT DISTINCT oa.activity_id FROM order_activity oa JOIN order_header oh ON oh.order_id=oa.order_id WHERE oh.order_no=?", (issue["order_no"],)).fetchall()]
+        issue["activityId"] = activity_ids[0] if len(activity_ids) == 1 else None
+    return issues
+
+
+def _activity_status(row: dict[str, Any], issues: list[dict[str, Any]]) -> str:
+    related = [issue for issue in issues if issue["activityId"] == row["activity_id"] and issue["calc_batch_id"] == row["calc_batch_id"]]
+    if any(issue["level"] == "警告" for issue in related):
+        return "待处理"
+    if any(issue["level"] == "提示" for issue in related):
+        return "待确认"
+    if row["settle_amount"] is not None and row["release_candidates"] and row["tpm_id"] is not None:
+        return "可提交"
+    return "已核验"
+
+
+def _activity_payload(row: dict[str, Any], issues: list[dict[str, Any]]) -> dict[str, Any]:
+    kind = "gift" if "赠" in (row["promotion_type"] or "") else "money"
+    return {
+        "activityId": row["activity_id"], "activityName": row["activity_name"], "dealer": row["dealer_name"], "platform": row["platform_name"],
+        "promotionType": row["promotion_type"], "benefitKind": kind, "ruleVersion": row["rule_version"], "calcBatchId": row["calc_batch_id"], "calcDate": row["calc_date"],
+        "tpm": None if row["tpm_id"] is None else {"id": row["tpm_id"], "code": row["tpm_code"], "budgetAmount": row["apply_amount"], "budgetReserveNo": row["budget_reserve_no"], "feeBearer": row["fee_pay_dept"]},
+        "actualDiscountTotal": row["actual_discount_total"], "settleAmount": row["settle_amount"], "budgetRemaining": row["diff_amount"],
+        "giftQtyEntitled": row["gift_qty_entitled"] if kind == "gift" else None, "giftQtyActual": row["gift_qty_actual"] if kind == "gift" else None,
+        "releaseCandidates": row["release_candidates"], "warningCount": sum(issue["level"] == "警告" and issue["activityId"] == row["activity_id"] for issue in issues), "tipCount": sum(issue["level"] == "提示" and issue["activityId"] == row["activity_id"] for issue in issues),
+        "status": _activity_status(row, issues),
+    }
+
+
+def query_fee_tpm_activities(db_path: Path, params: dict[str, Any]) -> dict[str, Any]:
+    limit, offset = _fee_tpm_bounds(params)
+    with sqlite3.connect(db_path) as connection:
+        connection.row_factory = sqlite3.Row
+        rows, batch_id = _fee_activity_rows(connection, params)
+        issues = _issues_for_batches(connection, {row["calc_batch_id"] for row in rows})
+    payload_rows = [_activity_payload(row, issues) for row in rows]
+    return {"mode": "historical" if batch_id is not None else "current", "calcBatchId": batch_id, "rows": payload_rows[offset:offset + limit], "total": len(payload_rows), "limit": limit, "offset": offset}
+
+
+def query_fee_tpm_issues(db_path: Path, params: dict[str, Any]) -> dict[str, Any]:
+    limit, offset = _fee_tpm_bounds(params)
+    with sqlite3.connect(db_path) as connection:
+        connection.row_factory = sqlite3.Row
+        rows, batch_id = _fee_activity_rows(connection, params)
+        issues = _issues_for_batches(connection, {row["calc_batch_id"] for row in rows})
+    payload = [{"issueId": issue["issue_id"], "orderNo": issue["order_no"], "issueType": issue["issue_type"], "level": issue["level"], "reason": issue["reason"], "evidence": issue["evidence_ref"], "calcBatchId": issue["calc_batch_id"], "activityId": issue["activityId"]} for issue in issues]
+    return {"mode": "historical" if batch_id is not None else "current", "calcBatchId": batch_id, "rows": payload[offset:offset + limit], "total": len(payload), "limit": limit, "offset": offset}
+
+
+def query_fee_tpm_settlements(db_path: Path, params: dict[str, Any]) -> dict[str, Any]:
+    activities = query_fee_tpm_activities(db_path, {**params, "limit": 100, "offset": 0})
+    rows = [row for row in activities["rows"] if row["benefitKind"] == "money" and row["status"] == "可提交" and row["settleAmount"] is not None]
+    return {**activities, "rows": rows, "total": len(rows)}
+
+
+def query_fee_tpm_overview(db_path: Path, params: dict[str, Any]) -> dict[str, Any]:
+    activities = query_fee_tpm_activities(db_path, {**params, "limit": 100, "offset": 0})
+    rows = activities["rows"]
+    return {"mode": activities["mode"], "calcBatchId": activities["calcBatchId"], "activityCount": len(rows), "submittableAmount": sum(float(row["settleAmount"] or 0) for row in rows if row["status"] == "可提交"), "giftQtyActual": sum(float(row["giftQtyActual"] or 0) for row in rows), "waitingCount": sum(row["status"] == "待确认" for row in rows), "handlingCount": sum(row["status"] == "待处理" for row in rows), "activities": rows}
+
+
+def query_fee_tpm_activity_detail(db_path: Path, activity_id: str, params: dict[str, Any]) -> dict[str, Any] | None:
+    payload = query_fee_tpm_activities(db_path, {**params, "limit": 100, "offset": 0})
+    for row in payload["rows"]:
+        if row["activityId"] == int(activity_id):
+            issues = query_fee_tpm_issues(db_path, params)["rows"]
+            return {**row, "issues": [issue for issue in issues if issue["activityId"] == row["activityId"]]}
+    return None
+
+
 def _cors_origin(handler: BaseHTTPRequestHandler) -> str:
     origin = handler.headers.get("Origin", "")
     return origin if origin.startswith(("http://localhost:", "http://127.0.0.1:")) else "null"
@@ -176,6 +311,23 @@ def make_handler(db_path: Path):
                     query = {key: values[-1] for key, values in parse_qs(parsed.query).items()}
                     _json(self, 200, query_dataset(db_path, object_name, query))
                     return
+                if len(parts) >= 3 and parts[:2] == ["api", "fee-tpm"]:
+                    query = {key: values[-1] for key, values in parse_qs(parsed.query).items()}
+                    endpoint = parts[2]
+                    if endpoint == "overview" and len(parts) == 3:
+                        _json(self, 200, query_fee_tpm_overview(db_path, query)); return
+                    if endpoint == "activities" and len(parts) == 3:
+                        _json(self, 200, query_fee_tpm_activities(db_path, query)); return
+                    if endpoint == "activities" and len(parts) == 4:
+                        detail = query_fee_tpm_activity_detail(db_path, parts[3], query)
+                        _json(self, 200, detail) if detail is not None else _json(self, 404, {"error": "not_found"})
+                        return
+                    if endpoint == "issues" and len(parts) == 3:
+                        _json(self, 200, query_fee_tpm_issues(db_path, query)); return
+                    if endpoint == "settlements" and len(parts) == 3:
+                        _json(self, 200, query_fee_tpm_settlements(db_path, query)); return
+                _json(self, 404, {"error": "not_found"})
+            except NotFoundError:
                 _json(self, 404, {"error": "not_found"})
             except KeyError:
                 _json(self, 404, {"error": "unsupported_object", "objects": list(SUPPORTED_OBJECTS)})

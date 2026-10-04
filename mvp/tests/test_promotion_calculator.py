@@ -60,7 +60,7 @@ class PromotionCalculatorTests(unittest.TestCase):
         fee = self.connection.execute("SELECT settle_amount, gift_cost_total FROM result_fee WHERE activity_id=?", (activity_id,)).fetchone()
         self.assertEqual(summary.template, 'gift')
         self.assertEqual(summary.gift_qty_entitled, Decimal('2'))
-        self.assertEqual(fee, (None, None))
+        self.assertEqual(tuple(fee), (None, None))
 
     def test_coupon_only_generates_fee_for_used_eligible_coupon(self):
         activity_id, rule_id = self._activity('券', '券类', '优惠券', 100, 10)

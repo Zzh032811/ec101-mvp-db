@@ -12,6 +12,7 @@ from datetime import datetime
 sys.path.insert(0, os.path.dirname(__file__))
 from readers import read_table, to_num, to_datetime_text
 from migrate_coupon_core import load_coupon_activities, migrate_schema
+from promotion_calculator import calculate_activity
 
 MVP   = r"D:\Peggy zhan\智能EC101\数据底座\第三阶段数据库设计\mvp"
 BASE  = r"D:\Peggy zhan\智能EC101\数据底座\第三阶段数据库设计\快马-兴路强-试点"
@@ -123,6 +124,9 @@ issue("优惠券数据已按文本重导,精度阻断解除", "提示",
 issue("券类理论优惠核算暂不可行", "警告",
       "本次定向优惠券活动明细仅1条且为测试券(test1/可口可乐客户测试/优惠200),无结构化券规则(门槛/面额/适用商品),"
       "按只报告不猜测原则,未建券活动/未算entitlement/fee;待平台提供真实券活动配置与全量领用数据后再核算")
+for activity_id in (coupon_summary["manual_activity_id"], coupon_summary["auto_activity_id"]):
+    summary = calculate_activity(con, activity_id, CB, "2026-09-22")
+    w("  通用券核算:", summary)
 w("\n== 3. RESULT == calc_batch_id=", CB, " 质量台账=2(精度解除提示 + 券核算暂不可行警告)")
 
 con.commit()
